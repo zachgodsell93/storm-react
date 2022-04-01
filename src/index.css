@@ -1,13 +1,46 @@
+@font-face {
+  font-family: "GothamMedium";
+  src: local("GothamMedium"),
+  url('./assets/fonts/Gotham-Font/GothamMedium.ttf');
+  font-weight:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "GothamLight";
+  src: local("GothamLight"),
+  url('./assets/fonts/Gotham-Font/GothamLight.ttf');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "GothamBold";
+  src: local("GothamBold"),
+  url('./assets/fonts/Gotham-Font/GothamBold.ttf');
+  font-weight:bolder;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: "GothamLight"
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  font-family: "GothamBold";
+}
+
+p {
+  font-family: "GothamLight";
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: "GothamLight",
     monospace;
 }
