@@ -24,6 +24,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "Avenir Normal";
+  src: local("AvenirNormal"),
+  url('./assets/fonts/Avenir/AvenirRegular.otf');
+  font-weight:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Avenir Bold";
+  src: local("AvenirBold"),
+  url('./assets/fonts/Avenir/AvenirBold.otf');
+  font-weight:bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   margin: 0;
   font-family: "GothamLight"
@@ -38,6 +56,7 @@ h1 {
 
 p {
   font-family: "GothamLight";
+  display: inline-block;
 }
 
 code {
