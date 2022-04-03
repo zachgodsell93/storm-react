@@ -1,7 +1,7 @@
 @font-face {
   font-family: "GothamMedium";
   src: local("GothamMedium"),
-  url('./assets/fonts/Gotham-Font/GothamMedium.ttf');
+  url('./assets/fonts/Gotham-Font/Gotham-Black.otf');
   font-weight:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,7 +10,7 @@
 @font-face {
   font-family: "GothamLight";
   src: local("GothamLight"),
-  url('./assets/fonts/Gotham-Font/GothamLight.ttf');
+  url('./assets/fonts/Gotham-Font/Gotham-Light.otf');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,7 +18,7 @@
 @font-face {
   font-family: "GothamBold";
   src: local("GothamBold"),
-  url('./assets/fonts/Gotham-Font/GothamBold.ttf');
+  url('./assets/fonts/Gotham-Font/Gotham-Bold.otf');
   font-weight:bolder;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

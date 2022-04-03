@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Grid } from '@mui/material'
+import TopButtons from '../components/dashboard/TopButtons'
+import Title from '../components/dashboard/Title'
+
 
 export default function Dashboard() {
     const StyledContainer = styled(Grid)`
@@ -12,7 +15,8 @@ export default function Dashboard() {
 
     return (
         <StyledContainer>
-                
+            <TopButtons /> 
+            <Title />
         </StyledContainer>
     )
 }
