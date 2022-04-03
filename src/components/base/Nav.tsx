@@ -10,9 +10,17 @@ import Toolbar from '@mui/material/Toolbar';
 import StyledButton from '../ui/StyledButton';
 import { ReactComponent as  PBBC } from "../../assets/images/pbbc.svg"
 import{ ReactComponent as Logo} from "../../assets/images/SLogoWhite.svg"
+import { Link, useLocation } from 'react-router-dom'
 
+const withoutSidebarRoutes = ['/login', '/register']
 
 export default function Nav({children}) {
+
+
+    const {pathname} = useLocation();
+
+    // Find the current page and determine if sidebar should be shown
+    if (withoutSidebarRoutes.some((item) => pathname.includes(item))) return children;
 
     const StyledPBBC = styled(PBBC)`
     padding-left: 5px;
