@@ -31,7 +31,8 @@ export default function Login() {
                     <Grid item xs={12}>
                         <TextField fullWidth 
                         id='email' 
-                        label='Email' 
+                        label='Email'
+                        value={email} 
                         onChange={(e) => setEmail(e.target.value)} 
                         />
                     </Grid>
@@ -39,12 +40,14 @@ export default function Login() {
                         <TextField fullWidth 
                         id='password' 
                         label='Password' 
+                        value={password}
+                        type='password'
                         onChange={(e) => setPassword(e.target.value)} 
                         />
                     </Grid>
                     <Grid item xs={12}>
                         <SubmitButton 
-                        onClick={logInWithEmailAndPassword(email,password)}>
+                        onClick={() => logInWithEmailAndPassword(email,password)}>
                             Login
                         </SubmitButton>
                     </Grid>

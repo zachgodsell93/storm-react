@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '@mui/material'
 
-export default function StyledButton({children}) { 
+export default function StyledButton(props) { 
   const SButton = styled(Button)`
   && {
       height: 56px;
@@ -17,8 +17,8 @@ export default function StyledButton({children}) {
   }
   `
   return (
-    <SButton>
-      {children}
+    <SButton onClick={() => props.onClick}>
+      {props.children}
     </SButton>
   )
 }

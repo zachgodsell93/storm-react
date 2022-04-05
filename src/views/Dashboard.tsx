@@ -24,6 +24,7 @@ export default function Dashboard() {
 
     const fetchUserName = async () => {
         try {
+          console.log(user?.uid)
           const q = query(collection(db, "users"), where("uid", "==", user?.uid));
           const doc = await getDocs(q);
           const data = doc.docs[0].data();
@@ -37,7 +38,7 @@ export default function Dashboard() {
     useEffect(() => {
         if (loading) return;
         if (!user) return navigate("/login");
-        fetchUserName();
+        // fetchUserName();
         setReady(true)
       }, [user, loading]);
 
