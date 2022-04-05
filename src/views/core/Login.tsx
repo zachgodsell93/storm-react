@@ -1,47 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
 import { Link, useNavigate } from 'react-router-dom'
-import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'firebase/auth'
-import { getFirestore, query, getDocs, collection, where, addDoc} from "firebase/firestore";
-import app from '../../utils/firebase-config';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, logInWithEmailAndPassword } from '../../utils/firebase';
+import { Grid } from '@mui/material';
+import background from '../../assets/images/background.png'
 
 export default function Login() {
+    const Background = styled(Grid)`
+        background-image: url(${background});
+        height: 100vh;
+    `
+
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
-    const auth = getAuth(app);
-    const db = getFirestore(app)
-    
-    const logInWithEmailAndPassword = async (email, password) => {
-        try {
-          await signInWithEmailAndPassword(auth, email, password);
-        } catch (err) {
-          console.error(err);
-          alert(err.message);
-        }
-      };
-
-    const sendPasswordReset = async (email) => {
-        try {
-            await sendPasswordResetEmail(auth, email);
-            alert("Password reset link sent!");
-        } catch (err) {
-            console.error(err);
-            alert(err.message);
-        }
-    };
-
-    const logout = () => {
-        signOut(auth);
-      };
+    const [user, loading, error] = useAuthState(auth);
+    let navigate = useNavigate();
 
     function validateForm() {
         return email.length > 0 && password.length > 0;
     }
 
-    let navigate = useNavigate();
-
+    useEffect(() => {
+        if (loading) {
+          // maybe trigger a loading screen
+          return;
+        }
+        if (user) navigate("/dashboard");
+      }, [user, loading]);
 
     return (
-        <div>Login</div>
+        <Background>
+            <p>Test</p>
+        </Background>
     )
 }

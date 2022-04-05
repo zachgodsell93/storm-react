@@ -1,7 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'firebase/auth'
+import { getFirestore, query, getDocs, collection, where, addDoc} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,4 +15,36 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export default app
+const auth = getAuth(app);
+const db = getFirestore(app)
+
+const logInWithEmailAndPassword = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    }
+  };
+
+const sendPasswordReset = async (email) => {
+    try {
+        await sendPasswordResetEmail(auth, email);
+        alert("Password reset link sent!");
+    } catch (err) {
+        console.error(err);
+        alert(err.message);
+    }
+};
+
+const logout = () => {
+    signOut(auth);
+  };
+
+export {
+  auth,
+  db,
+  logInWithEmailAndPassword,
+  sendPasswordReset,
+  logout,
+};
