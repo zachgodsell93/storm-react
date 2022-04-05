@@ -11,6 +11,8 @@ import StyledButton from '../ui/StyledButton';
 import { ReactComponent as  PBBC } from "../../assets/images/pbbc.svg"
 import{ ReactComponent as Logo} from "../../assets/images/SLogoWhite.svg"
 import { Link, useLocation } from 'react-router-dom'
+import { logout } from '../../utils/firebase.js'
+import { Button } from '@mui/material';
 
 const withoutSidebarRoutes = ['/login', '/register']
 
@@ -77,6 +79,11 @@ export default function Nav({children}) {
             <StyledButton>
                 Upload File(s)
             </StyledButton>
+            </Box>
+            <Box style={{paddingTop: '10px'}}>
+            <Button onClick={() => logout}>
+                Logout
+            </Button>
             </Box>
         </StyledDrawer>
         <Box style={{backgroundColor: '#F0F3F5', height:'100vh'}} component="main" sx={{ flexGrow: 1, p: 3 }}>
