@@ -7,18 +7,21 @@ export default function Title() {
 
     const T = styled.h1`
         font-family: "GothamBold";
-        font-size: 28px;
+        font-size: 32px;
         line-height: 30px;
         color: white;
     `
     const StyledLogo = styled(Logo)`
-        color: white;
         height: 33px;
+        text {
+            fill: white;
+        }
+        margin-top: 20px;
 
     `
 
     return (
-        <Grid container >
+        <Grid container paddingTop={5} justifyContent='center'>
             <Grid item>
                 <T>AVERAGE </T>
             </Grid>

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logInWithEmailAndPassword } from '../utils/firebase'
 import { query, collection, getDocs, where } from "firebase/firestore";
+import DataSectionOne from '../components/dashboard/DataSectionOne'
 
 export default function Dashboard() {
     const StyledContainer = styled(Grid)`
@@ -48,6 +49,7 @@ export default function Dashboard() {
             <StyledContainer>
                 <TopButtons /> 
                 <Title />
+                <DataSectionOne />
             </StyledContainer>
             :
             <></>} 
