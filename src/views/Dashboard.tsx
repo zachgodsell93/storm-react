@@ -3,19 +3,15 @@ import styled from 'styled-components'
 import { Grid } from '@mui/material'
 import TopButtons from '../components/dashboard/TopButtons'
 import Title from '../components/dashboard/Title'
+import StyledContainer from '../components/ui/StyledContainer'
 import { useNavigate } from 'react-router-dom'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logInWithEmailAndPassword } from '../utils/firebase'
 import { query, collection, getDocs, where } from "firebase/firestore";
 import DataSectionOne from '../components/dashboard/DataSectionOne'
+import StormRating from '../components/dashboard/StormRating'
 
 export default function Dashboard() {
-    const StyledContainer = styled(Grid)`
-    background-color: #101924;
-    border-radius: 40px;
-    height: 100vh;
-    margin: 1rem 3rem 1rem 3rem;
-    `
 
     const [user, loading, error] = useAuthState(auth);
     const [ready, setReady] = useState(false)
@@ -50,6 +46,7 @@ export default function Dashboard() {
                 <TopButtons /> 
                 <Title />
                 <DataSectionOne />
+                <StormRating />
             </StyledContainer>
             :
             <></>} 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid } from '@mui/material'
 import styled from 'styled-components'
+import { ReactComponent as Logo } from '../../assets/images/StormRating.svg'
 
 export default function DataSectionOne() {
 
@@ -35,12 +36,23 @@ export default function DataSectionOne() {
                 
             </Grid>
 
-            <Grid container xs={4}>
-                
+            <Grid container xs={4} justifyContent='center'>
+                <Logo />
             </Grid>
 
             <Grid container xs={4} paddingRight={30}>
-                
+                <Grid item xs={12} marginBottom={2}>
+                    <Scorecard1>
+                        test
+                    </Scorecard1>
+                </Grid>
+
+                <Grid item xs={12} marginBottom={2}>
+                    <Scorecard2>
+                        test
+                    </Scorecard2>
+                </Grid>
+
             </Grid>
 
         </Grid>
