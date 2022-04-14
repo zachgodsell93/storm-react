@@ -1,0 +1,40 @@
+import colours from "./Colors";
+import { Palette } from "./Types";
+
+const palette: Palette = {
+  primary: colours.midBlue,
+  borderPrimary: colours.borderGrey,
+  background: colours.backgroundGrey,
+  logoSeperator: colours.seperatorGrey,
+  headerLink: colours.midBlue,
+  headerAltLink: colours.darkGrey,
+  headerLinkSeperator: colours.black,
+  navLink: colours.darkGrey,
+  navLinkActive: colours.black,
+  navLinkActiveTab: colours.lightBlue,
+  contentBackground: colours.white,
+  contentTitle: colours.black,
+  contentText: colours.blueGreyBlack,
+  inputBorder: colours.lightGrey,
+  inputBackground: colours.lightGrey,
+  inputText: colours.black,
+  inputError: colours.red,
+  primaryButtonText: colours.white,
+  labelText: colours.lighterGrey,
+  loginLinkText: colours.deepBlue,
+  tabButtonBackground: colours.white,
+  tabButtonBorder: colours.regularGrey,
+  tabButtonText: colours.black,
+  separatorLine: colours.linesGrey,
+  accordionBorder: colours.borderGrey,
+  tableBorder: colours.borderGrey,
+  listParentBackground: colours.faintBlue,
+  buttonBorder: colours.regularGrey,
+  selectBackground: colours.feintGrey,
+  filterButtonBackground: colours.white,
+  filterButtonBorder: colours.regularGrey,
+  filterButtonText: colours.black,
+  marginGrey: colours.backingGrey,
+};
+
+export default palette;

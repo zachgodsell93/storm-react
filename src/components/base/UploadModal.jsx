@@ -18,7 +18,7 @@ export default function UploadModal(props) {
         return;
     uploadBytes(ref(storage, `${user?.email}/${file.name}`), file).then((snapshot) => {
         props.closeModal(false);
-        alert(`File successfully uploaded to ${user?.email}/${file.name}`)
+        // alert(`File successfully uploaded to ${user?.email}/${file.name}`)
     })
     };
     

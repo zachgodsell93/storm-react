@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Grid } from '@mui/material'
-import DashboardButton from '../ui/DashboardButton'
+import DashboardButton from './DashboardButton'
+import { Link } from 'react-router-dom'
 
-export default function TopButtons() {
+export default function TopButtons(props) {
     const StyledGrid = styled(Grid)`
         padding: 2rem 3rem 2rem 3rem;
 
@@ -12,17 +13,21 @@ export default function TopButtons() {
     const Divider = styled.div`
         height: 1px;
         width: 100%;
-        background-color: #FFF;
+        background-color: ${props.dividerColor};
     `
 
   return (
     <>
         <StyledGrid container columnSpacing={2}>
             <Grid item>
-                <DashboardButton text='Overview' />
+                <Link to='/dashboard' style={{ textDecoration: 'none' }}>
+                    <DashboardButton text='Overview' />
+                </Link> 
             </Grid>
             <Grid item>
-                <DashboardButton text='Documents' />
+                <Link to='/documents' style={{ textDecoration: 'none' }}>
+                    <DashboardButton text='Documents' />
+                </Link>
             </Grid>
             <Grid item>
                 <DashboardButton text='Statistics' />

@@ -6,6 +6,7 @@ import { Grid } from '@mui/material';
 
 import Login from './views/core/Login';
 import Dashboard from './views/Dashboard';
+import Documents from './views/Documents';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' element={<Navigate to ='/dashboard' />} />
             <Route path='/login' element={ <Login /> } />
             <Route path='/dashboard' element={ <Dashboard /> } />
+            <Route path='/documents' element={ <Documents /> } />
           </Routes>
         </Nav>
       </Router>

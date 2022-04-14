@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Grid } from '@mui/material'
-import TopButtons from '../components/dashboard/TopButtons'
+import TopButtons from '../components/ui/TopButtons'
 import Title from '../components/dashboard/Title'
 import StyledContainer from '../components/ui/StyledContainer'
 import { useNavigate } from 'react-router-dom'
@@ -42,8 +42,8 @@ export default function Dashboard() {
     return (
         <>
             {ready ? 
-            <StyledContainer>
-                <TopButtons /> 
+            <StyledContainer color='#101924'>
+                <TopButtons page='dashboard' dividerColor='#FFF'/> 
                 <Title />
                 <DataSectionOne />
                 <StormRating />
