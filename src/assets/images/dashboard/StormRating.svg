@@ -10,7 +10,10 @@
     <g id="🙋‍♂️-Punters" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Storm-Rating" stroke="#FFFFFF">
             <use id="Oval" mask="url(#mask-2)" stroke-width="76.6584" stroke-dasharray="10.22112007141111" xlink:href="#path-1"></use>
-            <circle id="Oval-Copy-3" stroke-width="7.66584" cx="160" cy="160" r="101.12708"></circle>
+            <circle id="Oval-Copy-3" stroke-width="7.66584" cx="160" cy="160" r="101.12708"
+            
+            ></circle>
+            <text x="50%" y="50%" dominant-baseline="middle" font-size="66px" font-weight="bold" font-family="GothamLight" fill='white' text-anchor="middle">74</text>
         </g>
     </g>
 </svg>

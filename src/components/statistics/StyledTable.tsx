@@ -2,9 +2,16 @@ import React from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'fileName', headerName: 'Filename', width: 700 },
-  { field: 'uploadDate', headerName: 'Upload Date', width: 200 },
+  { field: 'id', headerName: 'ID'},
+  { field: 'name', headerName: 'Name'},
+  { field: 'stormRating', headerName: 'Storm Rating'},
+  { field: 'location', headerName: 'Location'},
+  { field: 'turnover', headerName: 'Turnover'},
+  { field: 'betStake', headerName: 'Avg. Bet Stake'},
+  { field: 'actRevenue', headerName: 'Actual Revenue'},
+  { field: 'avgOdds', headerName: 'Avg. Odds'},
+  { field: 'expRevenue', headerName: 'Expected Revenue'},
+  { field: 'expROT', headerName: 'Expected RoT*'},
 ]
 
 const rows = [

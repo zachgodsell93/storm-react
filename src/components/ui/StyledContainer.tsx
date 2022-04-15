@@ -7,7 +7,7 @@ export default function StyledContainer(props) {
     const Container = styled(Grid)`
     background-color: ${props.color};
     border-radius: 40px;
-    height: fit-content;
+    height: max-content;
     margin: 1rem 3rem 1rem 3rem;
     `
 

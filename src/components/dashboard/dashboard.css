@@ -1,0 +1,20 @@
+.sc1 {
+    background-color: "#424E5B";
+    height: 80px;
+    width: 313px;
+    position: relative;
+    overflow: hidden;
+}
+.sc1:before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    width: 200%;
+    padding-bottom: 200%;
+    border-radius: 100%;
+    background: none;
+    -webkit-box-shadow: 0px -10px 5px 300px #F15723;
+    box-shadow: 0px -10px 5px 300px #F15723;
+    z-index: -1;
+}
