@@ -16,7 +16,7 @@ export default function DataSectionOne() {
 
     return (
         <Grid container>
-            <Grid container xs={4} paddingLeft={30}>
+            <Grid item xs={4} paddingLeft={30}>
                 <Grid item xs={12} marginBottom={3}>
                     <Left1 />
                 </Grid>
@@ -37,16 +37,16 @@ export default function DataSectionOne() {
                 
             </Grid>
 
-            <Grid container xs={4} justifyContent='center'>
+            <Grid item xs={4} justifyContent='center'>
                 <GaugeLarge />
             </Grid>
 
-            <Grid container xs={4}>
-                <Grid item xs={12} marginRight={6}>
+            <RightGrid item xs={4}>
+                <Grid item xs={12} marginBottom={3}>
                     <StyledR1 />
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid item xs={12} marginBottom={3}>
                     <StyledR2 />
                 </Grid>
                 <Grid item xs={12}>
@@ -58,7 +58,7 @@ export default function DataSectionOne() {
 
                 
 
-            </Grid>
+            </RightGrid>
 
             <Grid item xs={12}>
                 <Grid item xs={6}>
@@ -80,12 +80,16 @@ const SmallGauge = styled(GaugeLarge)`
     margin-left: 800px;
 `
 
-const StyledR1 = styled(Right1)`
+const RightGrid = styled(Grid)`
     
 `
 
+const StyledR1 = styled(Right1)`
+    margin-left: -320px;
+`
+
 const StyledR2 = styled(Right2)`
-    margin-top: -60px;
+   margin-left: -270px;
 `
 
 
