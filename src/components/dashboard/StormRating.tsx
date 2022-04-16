@@ -21,13 +21,13 @@ export default function StormRating() {
         <>
             <Grid container paddingTop={5} paddingBottom={5} justifyContent='center'>
                 <Grid item>
-                    <T>ALL CUSTOMERS -  </T>
+                    <T>ALL CUSTOMERS -&nbsp;</T>
                 </Grid>
                 <Grid item>
                     <StyledLogo />
                 </Grid>
                 <Grid item>
-                    <T> RATING</T>
+                    <T>&nbsp;RATING</T>
                 </Grid>
             </Grid>
 
@@ -44,7 +44,7 @@ export default function StormRating() {
                         <ZAxis type="number" name="Customer Turnover" dataKey="z" range={[1, 10000]} />
                         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                         <Legend />
-                        <Scatter data={data} fill="#8884d8" shape="circle" />
+                        <Scatter data={data} fill="#00A7FF" stroke='#0074B2' shape="circle" />
                     </ScatterChart>
                 </ResponsiveContainerStyled>
                 

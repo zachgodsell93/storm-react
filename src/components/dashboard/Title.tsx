@@ -23,13 +23,13 @@ export default function Title() {
     return (
         <Grid container paddingTop={5} justifyContent='center'>
             <Grid item>
-                <T>AVERAGE </T>
+                <T>AVERAGE&nbsp;</T>
             </Grid>
             <Grid item>
                 <StyledLogo />
             </Grid>
             <Grid item>
-                <T> RATING</T>
+                <T>&nbsp;RATING</T>
             </Grid>
         </Grid>
     )

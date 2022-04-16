@@ -3,11 +3,7 @@ import './dashboard.css'
 import { Grid } from '@mui/material'
 import styled from 'styled-components'
 import { ReactComponent as GaugeLarge } from '../../assets/images/dashboard/StormRating.svg'
-import { ReactComponent as Left1 } from '../../assets/images/dashboard/Left 1.svg'
-import { ReactComponent as Left2 } from '../../assets/images/dashboard/Left 2.svg'
-import { ReactComponent as Left3 } from '../../assets/images/dashboard/Left 3.svg'
-import { ReactComponent as Right1 } from '../../assets/images/dashboard/Right 1.svg'
-import { ReactComponent as Right2 } from '../../assets/images/dashboard/Right 2.svg'
+import { LeftOne, LeftTwo, LeftThree, LeftFour, RightOne, RightTwo, ProgressBar, ProgressBar2, ProgressBar3, SmallGauge} from '../ui/dashboard/Components'
 
 
 export default function DataSectionOne() {
@@ -16,23 +12,21 @@ export default function DataSectionOne() {
 
     return (
         <Grid container>
-            <Grid item xs={4} paddingLeft={30}>
+            <Grid item xs={4} paddingLeft={28}>
                 <Grid item xs={12} marginBottom={3}>
-                    <Left1 />
+                    <L1 />
                 </Grid>
 
                 <Grid item xs={12} marginBottom={3}>
-                    <Left2 />
+                    <L2 />
                 </Grid>
 
                 <Grid item xs={12} marginBottom={3}>
-                    <Left3 />
+                    <L3 />
                 </Grid>
 
                 <Grid item xs={12} marginBottom={3}>
-                    <Scorecard4>
-                        test
-                    </Scorecard4>
+                    <L4 />
                 </Grid>
                 
             </Grid>
@@ -43,16 +37,23 @@ export default function DataSectionOne() {
 
             <RightGrid item xs={4}>
                 <Grid item xs={12} marginBottom={3}>
-                    <StyledR1 />
+                    <R1 />
                 </Grid>
 
                 <Grid item xs={12} marginBottom={3}>
-                    <StyledR2 />
+                    <R2 />
                 </Grid>
-                <Grid item xs={12}>
-                    
-                </Grid>
-                <Grid item xs={12}>
+                <Grid container direction='row' xs={12}>
+                    <Grid item direction='column' xs={6}>
+                        <SGauge content1='12%' content2='25%' />
+                        
+                    </Grid>
+                    <Grid item direction='column' xs={4}> 
+                        <Progress1 percent='89%' />
+                        <Progress2 percent='23%' />
+                        <Progress3 percent='76%' />
+                        
+                    </Grid>
                     
                 </Grid>
 
@@ -60,68 +61,53 @@ export default function DataSectionOne() {
 
             </RightGrid>
 
-            <Grid item xs={12}>
-                <Grid item xs={6}>
-                    <SmallGauge />
-                </Grid>
-                <Grid item xs={6}>
-
-                </Grid>
-            </Grid>
-
         </Grid>
         
     )
 }
 
-const SmallGauge = styled(GaugeLarge)`
+const SGauge = styled(SmallGauge)`
     transform: scale(0.7);
-    margin-top: -200px;
-    margin-left: 800px;
+    margin-left: -360px;
+    margin-top: -10px;
 `
 
+const Progress1 = styled(ProgressBar)`
+    transform: scale(0.5);
+    margin-top: 65px;
+    margin-left: -260px;
+`
+const Progress2 = styled(ProgressBar2)`
+    transform: scale(0.5);
+    margin-top: 10px;
+    margin-left: -260px;
+`
+const Progress3 = styled(ProgressBar3)`
+    transform: scale(0.5);
+    margin-top: 10px;
+    margin-left: -260px;
+`
+
+const L1 = styled(LeftOne)`
+    
+`
+const L2 = styled(LeftTwo)`
+    
+`
+const L3 = styled(LeftThree)`
+    
+`
+const L4 = styled(LeftFour)`
+    
+`
 const RightGrid = styled(Grid)`
     
 `
 
-const StyledR1 = styled(Right1)`
+const R1 = styled(RightOne)`
     margin-left: -320px;
 `
 
-const StyledR2 = styled(Right2)`
+const R2 = styled(RightTwo)`
    margin-left: -270px;
 `
-
-
-const Scorecard1 = styled.div`
-        background-color: #424E5B;
-        height: 80px;
-        width: 313px;
-        position: relative;
-        overflow: hidden;
-
-    `
-const Scorecard2 = styled.div`
-    background-color: #424E5B;
-    height: 80px;
-    width: 265px;
-    position: relative;
-    overflow: hidden;
-
-    `
-const Scorecard3 = styled.div`
-    background-color: #424E5B;
-    height: 80px;
-    width: 320px;
-    position: relative;
-    overflow: hidden;
-
-    `
-const Scorecard4 = styled.div`
-    background-color: #424E5B;
-    height: 80px;
-    width: 450px;
-    position: relative;
-    overflow: hidden;
-
-    `
