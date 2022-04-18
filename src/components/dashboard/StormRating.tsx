@@ -3,6 +3,7 @@ import { Grid } from '@mui/material'
 import styled from 'styled-components'
 import{ ReactComponent as Logo} from "../../assets/images/SLogoWhite.svg"
 import PlotBG from '../../assets/images/HeatmapMain.svg'
+import DLegend from '../../assets/images/dashboard/BottomGraph.png'
 
 import {
     ScatterChart,
@@ -32,24 +33,26 @@ export default function StormRating() {
             </Grid>
 
             <Grid container justifyContent='center'>
-                <ResponsiveContainerStyled height={610} width={1030} >
+                <ResponsiveContainerStyled height={585} width={1030} >
                     <ScatterChart
                         width={900}
                         height={550}
-                        
                         >
                         <CartesianGrid />
                         <XAxis type="number" dataKey="x" name="Storm Rating" range={[1, 100]}/>
                         <YAxis type="category" dataKey="y" name="Type" allowDuplicatedCategory={false} />
                         <ZAxis type="number" name="Customer Turnover" dataKey="z" range={[1, 10000]} />
                         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-                        <Legend />
+                        
                         <Scatter data={data} fill="#00A7FF" stroke='#0074B2' shape="circle" />
                     </ScatterChart>
                 </ResponsiveContainerStyled>
                 
                    
                 
+            </Grid>
+            <Grid container justifyContent='center'>
+                <img src={DLegend} alt=""></img>
             </Grid>
         </>
     )
@@ -105,6 +108,17 @@ const data = [
     {y: 'Horse Racing', x: 88, z: 100},
     {y: 'Horse Racing', x: 34, z: 100},
     {y: 'Horse Racing', x: 99, z: 100},
+    {y: 'Harness', x: 3, z: 100},
+    {y: 'Harness', x: 16, z: 100},
+    {y: 'Harness', x: 34, z: 100},
+    {y: 'Harness', x: 56, z: 100},
+    {y: 'Harness', x: 57, z: 100},
+    {y: 'Harness', x: 67, z: 100},
+    {y: 'Harness', x: 71, z: 100},
+    {y: 'Harness', x: 82, z: 100},
+    {y: 'Harness', x: 88, z: 300},
+    {y: 'Sports', x: 89, z: 400},
+    {y: 'Sports', x: 96, z: 100},
     {y: 'Sports', x: 3, z: 100},
     {y: 'Sports', x: 16, z: 100},
     {y: 'Sports', x: 34, z: 100},

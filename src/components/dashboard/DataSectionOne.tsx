@@ -2,8 +2,7 @@ import React from 'react'
 import './dashboard.css'
 import { Grid } from '@mui/material'
 import styled from 'styled-components'
-import { ReactComponent as GaugeLarge } from '../../assets/images/dashboard/StormRating.svg'
-import { LeftOne, LeftTwo, LeftThree, LeftFour, RightOne, RightTwo, ProgressBar, ProgressBar2, ProgressBar3, SmallGauge} from '../ui/dashboard/Components'
+import { LeftOne, LeftTwo, LeftThree, LeftFour, RightOne, RightTwo, ProgressBar, ProgressBar2, ProgressBar3, SmallGauge, LargeGauge} from '../ui/dashboard/Components'
 
 
 export default function DataSectionOne() {
@@ -11,7 +10,7 @@ export default function DataSectionOne() {
     
 
     return (
-        <Grid container>
+        <Grid container paddingTop={3}>
             <Grid item xs={4} paddingLeft={28}>
                 <Grid item xs={12} marginBottom={3}>
                     <L1 />
@@ -32,7 +31,7 @@ export default function DataSectionOne() {
             </Grid>
 
             <Grid item xs={4} justifyContent='center'>
-                <GaugeLarge />
+                <LGauge />
             </Grid>
 
             <RightGrid item xs={4}>
@@ -65,6 +64,12 @@ export default function DataSectionOne() {
         
     )
 }
+
+const LGauge = styled(LargeGauge)`
+
+
+`
+
 
 const SGauge = styled(SmallGauge)`
     transform: scale(0.7);

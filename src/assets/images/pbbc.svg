@@ -10,7 +10,7 @@
     </defs>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Powered-by-Betcloud" transform="translate(0.000000, 0.029190)">
-            <text id="Powered-by" font-family="GothamLight" font-size="9" font-style="italic" font-weight="500" line-spacing="9" letter-spacing="-0.112500004" fill="#000000">
+            <text id="Powered-by" font-family="GothamLight" font-size="9" font-style="italic" font-weight="500" line-spacing="3" letter-spacing="-0.112500004" fill="#000000">
                 <tspan x="0.192000045" y="7">POWERED BY</tspan>
             </text>
             <g id="BetCloudLogo-Copy-2" transform="translate(0.000000, 12.000000)">

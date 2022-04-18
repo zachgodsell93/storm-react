@@ -6,8 +6,7 @@ import Drawer from '@mui/material/Drawer';
 import AppBar from '@mui/material/AppBar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
-import { ReactComponent as  PBBC } from "../../assets/images/pbbc.svg"
-import{ ReactComponent as Logo} from "../../assets/images/SLogoWhite.svg"
+import { Logo, PBBC } from '../ui/SVG';
 import { Link, useLocation } from 'react-router-dom'
 import { logout } from '../../utils/firebase.js'
 import { Button } from '@mui/material';
@@ -32,51 +31,24 @@ export default function Nav({children}) {
     // Find the current page and determine if sidebar should be shown
     if (withoutSidebarRoutes.some((item) => pathname.includes(item))) return children;
 
-    const StyledPBBC = styled(PBBC)`
-    padding-left: 5px;
-    padding-right: 5px;
-    `
 
-    const StyledLogo = styled(Logo)`
-
-    `
-
-    const StyledAppBar = styled(AppBar)`
-    && {
-        z-index: 2;
-        background-color: #FFF;
-        box-shadow: none;
-    }
-    `
-    const StyledDrawer = styled(Drawer)`
-        && {
-            z-index: 1;
-            width: 240px;
-            background-color: #444;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            & .MuiDrawer-paper {
-                width: 240px;
-                box-sizing: border-box;
-            }
-        }
-        
-    `
 
     return (
         <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <StyledAppBar position="fixed" >
             <Toolbar>
-                <Grid container direction='row'>
+                <Grid container direction='row' style={{position: 'relative'}}>
                     <Grid xs={1} item>
                         <StyledLogo />
                     </Grid>
-                    <Grid item xs={1} alignItems="flex-end" direction='row'>
+                    <Grid item xs={1} style={{position: 'absolute', bottom: 0, left:0, paddingLeft: '160px', paddingBottom: '9px'}}>
                         <StyledPBBC />
                     </Grid>
-                    <Grid item xs={1}>
-                        <p style={{float:'right'}}>Logout</p>
+                    <Grid item xs={10} >
+                    <Button style={{float: 'right'}} onClick={logout}>
+                        Logout
+                    </Button>
                     </Grid>
                 </Grid>
             </Toolbar>
@@ -88,13 +60,8 @@ export default function Nav({children}) {
                     Upload File(s)
                 </StyledButton>
             </Box>
-            <Box style={{paddingTop: '10px'}}>
-                <Button onClick={logout}>
-                    Logout
-                </Button>
-            </Box>
         </StyledDrawer>
-        <Box style={{backgroundColor: '#F0F3F5', height:'100vh'}} component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box style={{backgroundColor: '#F0F3F5', height:'100%'}} component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Toolbar />
             <UploadModal open={open} closeModal={closeModal}/>
             {children}
@@ -117,3 +84,34 @@ const StyledButton = styled(Button)`
       font-family: "GothamBold";
   }
   `
+const StyledPBBC = styled(PBBC)`
+padding-left: 5px;
+padding-right: 5px;
+float: left;
+`
+
+const StyledLogo = styled(Logo)`
+
+`
+
+const StyledAppBar = styled(AppBar)`
+&& {
+    z-index: 2;
+    background-color: #FFF;
+    box-shadow: none;
+}
+`
+const StyledDrawer = styled(Drawer)`
+    && {
+        z-index: 1;
+        width: 240px;
+        background-color: #444;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        & .MuiDrawer-paper {
+            width: 240px;
+            box-sizing: border-box;
+        }
+    }
+    
+`
