@@ -33,14 +33,14 @@ export default function StormRating() {
             </Grid>
 
             <Grid container justifyContent='center'>
-                <ResponsiveContainerStyled height={585} width={1030} >
+                <ResponsiveContainerStyled height={585} width={1080} >
                     <ScatterChart
                         width={900}
                         height={550}
                         >
                         <CartesianGrid />
                         <XAxis type="number" dataKey="x" name="Storm Rating" range={[1, 100]}/>
-                        <YAxis type="category" dataKey="y" name="Type" allowDuplicatedCategory={false} />
+                        <YAxis width={110} type="category" dataKey="y" name="Type" allowDuplicatedCategory={false} />
                         <ZAxis type="number" name="Customer Turnover" dataKey="z" range={[1, 10000]} />
                         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                         
@@ -51,7 +51,7 @@ export default function StormRating() {
                    
                 
             </Grid>
-            <Grid container justifyContent='center'>
+            <Grid container justifyContent='center' paddingLeft={10} paddingBottom={10}>
                 <img src={DLegend} alt=""></img>
             </Grid>
         </>
@@ -79,7 +79,7 @@ const ResponsiveContainerStyled = styled(ResponsiveContainer)`
     background-size: auto;
     background-position: 30px 30px;
     background-repeat: no-repeat;
-    background-position-x: 70px;
+    background-position-x: 120px;
     background-position-y: 5px;
 
     
