@@ -53,6 +53,7 @@ export default function StormRating() {
             </Grid>
             <Grid container justifyContent='center' paddingLeft={10} paddingBottom={10}>
                 <img src={DLegend} alt=""></img>
+                
             </Grid>
         </>
     )

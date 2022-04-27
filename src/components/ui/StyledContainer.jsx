@@ -9,6 +9,7 @@ export default function StyledContainer(props) {
     border-radius: 40px;
     height: max-content;
     margin: 1rem 3rem 1rem 3rem;
+    width: 1520px;
     `
 
   return (

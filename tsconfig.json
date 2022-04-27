@@ -32,7 +32,7 @@
       "src/**/*.ts",
       "src/**/*.tsx",
       "src/**/*.js"
-    ],
+, "src/index.jsx", "src/App.jsx", "src/views/Statistics.jsx", "src/views/Documents.jsx", "src/views/Dashboard.jsx", "src/views/core/Login.jsx"    ],
     "exclude": [
       "node_modules",
       "<node_internals>/**",

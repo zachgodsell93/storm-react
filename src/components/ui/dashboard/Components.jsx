@@ -1,69 +1,87 @@
 import React from 'react'
 
-export const LeftOne = ({className}) => {
+export const LeftOne = (props) => {
     return (
-        <svg className={className} width="373px" height="80px" viewBox="0 0 373 80" version="1.1" >
-            <title>Left 1</title>
-            <g id="🙋‍♂️-Punters" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <path d="M326.961061,79.999797 L0,80 L0,0 L372.767802,-0.00333351626 C351.443865,22.1663214 335.480006,49.528977 326.961061,79.999797 Z" id="Left-1" fill="#424E5B"></path>
-            </g>
-        </svg>
-    )
-}
-
-export const LeftTwo = ({className}) => {
-    return (
-        <svg className={className} width="326px" height="80px" viewBox="0 0 326 80" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <title>Left 2</title>
-            <g id="🙋‍♂️-Punters" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <path d="M320,36 C320,51.1498461 321.782504,65.8833663 325.149226,80.002275 L0,80 L0,2.84217094e-13 L323.424953,-0.00265823222 C321.17712,11.6523577 320,23.6887132 320,36 Z" id="Left-2" fill="#424E5B"></path>
-            </g>
-        </svg>
-    )
-}
-
-export const LeftThree = ({className}) => {
-    return (
-        <svg className={className} width="381px" height="81px" viewBox="0 0 381 81" version="1.1" xmlns="http://www.w3.org/2000/svg" >
-            <title>Left 3</title>
-            <g id="🙋‍♂️-Punters" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <path d="M380.940964,80.0045149 L9.09494702e-13,80 L9.09494702e-13,0 L329.391878,0.00217851612 C339.559699,30.9725221 357.514595,58.4118345 380.940964,80.0045149 Z" id="Left-3" fill="#424E5B"></path>
-            </g>
-        </svg>
-    )
-}
-
-export const LeftFour = ({className}) => {
-    return (
-        <svg width="449px" height="83px" viewBox="0 0 449 83" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <title>Combined Shape Copy 6</title>
+        <svg className={props.className} width="313px" height="80px" viewBox="0 0 313 80" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <title>Rect 1</title>
             <g id="⚡️-Storm-–-Standalone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <path d="M449,38 L449,79.7263339 L0,83 L0,3 L336.055634,0.55501387 C367.565175,24.075203 406.656432,38 449,38 Z" id="Combined-Shape-Copy-6" fill="#424E5B"></path>
+                <path d="M266.961061,79.999797 L0,80 L0,0 L312.767802,-0.00333351626 C291.443865,22.1663214 275.480006,49.528977 266.961061,79.999797 Z" id="Rect-1" fill="#424E5B"></path>
             </g>
+            <foreignObject width="313px" height="80px">
+                {props.children}
+            </foreignObject>
+        </svg>
+    )
+}
+
+export const LeftTwo = (props) => {
+    return (
+        <svg className={props.className} width="266px" height="80px" viewBox="0 0 266 80" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <title>Rect 2</title>
+            <g id="⚡️-Storm-–-Standalone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path d="M260,36 C260,51.1498461 261.782504,65.8833663 265.149226,80.002275 L0,80 L0,2.84217094e-13 L263.424953,-0.00265823222 C261.17712,11.6523577 260,23.6887132 260,36 Z" id="Rect-2" fill="#424E5B"></path>
+            </g>
+            <foreignObject width="313px" height="80px">
+                {props.children}
+            </foreignObject>
+        </svg>
+    )
+}
+
+export const LeftThree = (props) => {
+    return (
+        <svg className={props.className} width="321px" height="81px" viewBox="0 0 321 81" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+            <title>Rect 3</title>
+            <g id="⚡️-Storm-–-Standalone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path d="M320.940964,80.0045149 L0,80 L0,0 L269.391878,0.00217851612 C279.559699,30.9725221 297.514595,58.4118345 320.940964,80.0045149 Z" id="Rect-3" fill="#424E5B"></path>
+            </g>
+            <foreignObject width="313px" height="80px">
+                {props.children}
+            </foreignObject>
+        </svg>
+    )
+}
+
+export const LeftFour = (props) => {
+    return (
+        <svg className={props.className} width="449px" height="83px" viewBox="0 0 449 83" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <title>Rect 4</title>
+            <g id="⚡️-Storm-–-Standalone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path d="M449,38 L449,79.7263339 L0,83 L0,3 L336.055634,0.55501387 C367.565175,24.075203 406.656432,38 449,38 Z" id="Rect-4" fill="#424E5B"></path>
+            </g>
+            <foreignObject width="313px" height="80px">
+                {props.children}
+            </foreignObject>
         </svg>
     )
 }
 
 
-export const RightOne = ({className}) => {
+export const RightOne = (props) => {
     return (
-        <svg className={className} width="373px" height="81px" fill="#000"  viewBox="0 0 373 81" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+        <svg className={props.className} width="373px" height="81px" fill="#000"  viewBox="0 0 373 81" version="1.1" xmlns="http://www.w3.org/2000/svg" >
             <title>Right 1</title>
             <g id="🙋‍♂️-Punters" stroke="none"  stroke-width="1">
                 <path d="M326.961758,80.0038546 L0.000696480023,80.0040576 L0.000696480023,0.0040576152 L372.768498,0.000724098933 C351.444561,22.170379 335.480702,49.5330346 326.961758,80.0038546 Z" id="Right-1" fill="#424E5B" transform="translate(186.384597, 40.002391) scale(-1, 1) translate(-186.384597, -40.002391) "></path>
             </g>
+            <foreignObject width="373px" height="80px">
+                {props.children}
+            </foreignObject>
         </svg>
     )
 }
 
 
-export const RightTwo = ({className}) => {
+export const RightTwo = (props) => {
     return (
-        <svg className={className} width="326px" height="81px" viewBox="0 0 326 81" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+        <svg className={props.className} width="326px" height="81px" viewBox="0 0 326 81" version="1.1" xmlns="http://www.w3.org/2000/svg" >
             <title>Right 2</title>
             <g id="🙋‍♂️-Punters" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <path d="M319.999884,36.0026582 C319.999884,51.1525044 321.782388,65.8860245 325.14911,80.0049333 L-0.000115932664,80.0026582 L-0.000115932664,0.00265823222 L323.424837,-8.99918414e-15 C321.177004,11.6550159 319.999884,23.6913715 319.999884,36.0026582 Z" id="Right-2" fill="#424E5B" transform="translate(162.574497, 40.002467) scale(-1, 1) translate(-162.574497, -40.002467) "></path>
             </g>
+            <foreignObject width="323px" height="80px">
+                {props.children}
+            </foreignObject>
         </svg>
     )
 }
@@ -89,6 +107,17 @@ export const LargeGauge = ({
                     ></circle>
                     <text x="50%" y="50%" dominant-baseline="middle" font-size="66px" font-weight="bold" font-family="GothamLight" fill='white' text-anchor="middle">{text}</text>
                 </g>
+            </g>
+        </svg>
+    )
+}
+
+export const Ticker = (props) => {
+    return (
+        <svg className={props.className} width="86px" height="63px" viewBox="0 0 86 63" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <title>Ticker Triangle</title>
+            <g id="⚡️-Storm-–-Standalone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path d="M41.9452263,0.534216237 L0.378545364,60.9948431 C-0.0219477293,61.5773785 0.125626725,62.3742806 0.708162134,62.7747737 C0.921536049,62.9214682 1.17438328,63 1.43331903,63 L84.566681,63 C85.2736055,63 85.846681,62.4269245 85.846681,61.72 C85.846681,61.4610642 85.7681492,61.208217 85.6214546,60.9948431 L44.0547737,0.534216237 C43.6542806,-0.0483191715 42.8573785,-0.195893626 42.2748431,0.204599467 C42.1457218,0.293370358 42.0339972,0.405094942 41.9452263,0.534216237 Z" id="Ticker-Triangle" fill={props.color}></path>
             </g>
         </svg>
     )
