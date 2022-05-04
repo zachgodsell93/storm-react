@@ -30,7 +30,9 @@ export default function TopButtons(props) {
                 </Link>
             </Grid>
             <Grid item>
-                <DashboardButton text='Statistics' />
+                <Link to='/statistics' style={{ textDecoration: 'none'}}>
+                    <DashboardButton text='Statistics' />
+                </Link>
             </Grid>
         </StyledGrid>
         <Divider />

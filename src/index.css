@@ -70,3 +70,12 @@ code {
   font-family: "GothamLight",
     monospace;
 }
+
+
+.dropzone {
+  border-radius: 10px;
+  border-style: dashed ;
+  border-width: 3px;
+  border-color: #399EEA;
+  padding: 15px;
+}

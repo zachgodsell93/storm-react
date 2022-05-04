@@ -86,6 +86,12 @@ export default function DataSectionOne() {
                         <Grid style={{float:'right', marginTop: '-10px', paddingRight:'10px'}} item xs={12}>
                             <GreyText>Most Popular Status</GreyText>
                         </Grid>
+                        <Grid style={{float: 'right', marginRight: '-140px'}} item xs={12}>
+                            <StyledTicker color='#FF003B'></StyledTicker>
+                            <ColoredText color='#FF003B'>
+                                &nbsp;Sharp
+                            </ColoredText>
+                        </Grid>
                     </R1>
                 </Grid>
 
@@ -93,6 +99,12 @@ export default function DataSectionOne() {
                     <R2>
                         <Grid style={{float:'right', marginTop: '-10px', paddingRight:'10px'}} item xs={12}>
                             <GreyText>Total Revenue</GreyText>
+                        </Grid>
+                        <Grid style={{float: 'right', marginRight: '-100px'}} direction={'row'} item xs={12}>
+                            <StyledTicker color='#1EE587'></StyledTicker>
+                            <ColoredText color='#1EE587'>
+                                &nbsp;$406,200
+                            </ColoredText>
                         </Grid>
                     </R2>
                 </Grid>
@@ -104,15 +116,15 @@ export default function DataSectionOne() {
                     <Grid item direction='column' xs={4}>
                         <Grid item xs={12}>
                             <h5 style={{marginBottom: '-70px', marginLeft: '-380px', color: 'white'}}>Recreational</h5>
-                            <Progress1 percent='89%' />
+                            <Progress1 percent='89%' color1='#FFF' />
                         </Grid> 
                         <Grid item xs={12}>
                             <h5 style={{marginBottom: '-15px', marginLeft: '-420px', color: 'white'}}>Player</h5>
-                            <Progress2 percent='25%' />
+                            <Progress2 percent='25%' color='#7E25FF' />
                         </Grid> 
                         <Grid item xs={12}>
                             <h5 style={{marginBottom: '-15px', marginLeft: '-420px', color: 'white'}}>Sharp</h5>
-                            <Progress3 percent='46%' />
+                            <Progress3 percent='46%' color='#E584F3' />
                         </Grid> 
                     
                     </Grid>

@@ -3,9 +3,8 @@ import {Dialog, DialogTitle, DialogActions, Button, DialogContent, TextField} fr
 import { storage } from '../../utils/firebase'
 import { ref, uploadBytes } from 'firebase/storage';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { query, collection, getDocs, where } from "firebase/firestore"
-import { auth, db, logout } from '../../utils/firebase';
-import { useEffect } from 'react';
+import { auth } from '../../utils/firebase';
+import { DragNDrop } from './DragNDrop';
 
 export default function UploadModal(props) {
 
@@ -32,14 +31,16 @@ export default function UploadModal(props) {
                 {"Upload CSV"}
             </DialogTitle>
             <DialogContent>
-            <TextField fullWidth 
+            <DragNDrop />
+            {/* <TextField fullWidth 
                 id='password' 
                 type='file'
                 onChange={(e) =>{setFile(e.target.files[0])}}
-            />
-            <Button onClick={upload}>
+            /> */}
+            
+            {/* <Button onClick={upload}>
                 Upload
-            </Button>
+            </Button> */}
                             
             </DialogContent>
             <DialogActions>

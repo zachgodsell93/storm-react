@@ -139,7 +139,7 @@ export const SmallGauge = ({
                     <use xlinkHref="#path-1"></use>
                 </mask>
                 <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%"   stop-color="#7E25FF"/>
+                    <stop offset="0%"  stop-color="#7E25FF"/>
                     <stop offset="26%" stop-color="#E584F3"/>
                     <stop offset="76%" stop-color="#FFF"/>
                 </linearGradient>
@@ -162,19 +162,19 @@ export const SmallGauge = ({
 
 export const ProgressBar = ({
     className,
-    color = "#7E25FF",
+    color1 = "#7E25FF",
     percent}) => {
     return (
-        <svg className={className} fill='url(#pbar)' width="460px" height="43px" viewBox="0 0 460 43" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg className={className} fill='url(#pbar1)' width="460px" height="43px" viewBox="0 0 460 43" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <title>Progress</title>
             <defs>
-                <linearGradient id="pbar" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color="#7E25FF"/>
-                    <stop offset={percent} stop-color="#FFF"/>
+                <linearGradient id="pbar1" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
+                    <stop offset={percent} stop-color={color1}/>
+                    <stop offset={percent} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
-                <g fill='url(#pbar)' id="Progress" >
+                <g fill='url(#pbar1)' id="Progress" >
                     <polygon id="Rectangle" points="14.4200627 1.40235046e-14 27.3981191 1.40235046e-14 12.9780564 43 0 43"></polygon>
                     <polygon id="Rectangle-1" points="36.0501567 1.40235046e-14 49.0282132 1.40235046e-14 34.6081505 43 21.630094 43"></polygon>
                     <polygon id="Rectangle-2" points="57.6802508 1.40235046e-14 70.6583072 1.40235046e-14 56.2382445 43 43.2601881 43"></polygon>
@@ -207,16 +207,16 @@ export const ProgressBar2 = ({
     color = "#7E25FF",
     percent}) => {
     return (
-        <svg className={className} fill='url(#pbar)' width="460px" height="43px" viewBox="0 0 460 43" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg className={className} fill='url(#pbar2)' width="460px" height="43px" viewBox="0 0 460 43" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <title>Progress</title>
             <defs>
-                <linearGradient id="pbar" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color="#7E25FF"/>
-                    <stop offset={percent} stop-color="#FFF"/>
+                <linearGradient id="pbar2" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
+                    <stop offset={percent} stop-color={color}/>
+                    <stop offset={percent} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
-                <g fill='url(#pbar)' id="Progress" >
+                <g fill='url(#pbar2)' id="Progress" >
                     <polygon id="Rectangle" points="14.4200627 1.40235046e-14 27.3981191 1.40235046e-14 12.9780564 43 0 43"></polygon>
                     <polygon id="Rectangle-1" points="36.0501567 1.40235046e-14 49.0282132 1.40235046e-14 34.6081505 43 21.630094 43"></polygon>
                     <polygon id="Rectangle-2" points="57.6802508 1.40235046e-14 70.6583072 1.40235046e-14 56.2382445 43 43.2601881 43"></polygon>
@@ -249,16 +249,16 @@ export const ProgressBar3 = ({
     color = "#7E25FF",
     percent}) => {
     return (
-        <svg className={className} fill='url(#pbar)' width="460px" height="43px" viewBox="0 0 460 43" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg className={className} fill='url(#pbar3)' width="460px" height="43px" viewBox="0 0 460 43" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <title>Progress</title>
             <defs>
-                <linearGradient id="pbar" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color="#7E25FF"/>
-                    <stop offset={percent} stop-color="#FFF"/>
+                <linearGradient id="pbar3" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
+                    <stop offset={percent} stop-color={color}/>
+                    <stop offset={percent} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
-                <g fill='url(#pbar)' id="Progress" >
+                <g fill='url(#pbar3)' id="Progress" >
                     <polygon id="Rectangle" points="14.4200627 1.40235046e-14 27.3981191 1.40235046e-14 12.9780564 43 0 43"></polygon>
                     <polygon id="Rectangle-1" points="36.0501567 1.40235046e-14 49.0282132 1.40235046e-14 34.6081505 43 21.630094 43"></polygon>
                     <polygon id="Rectangle-2" points="57.6802508 1.40235046e-14 70.6583072 1.40235046e-14 56.2382445 43 43.2601881 43"></polygon>

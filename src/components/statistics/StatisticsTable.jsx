@@ -4,7 +4,7 @@ import { FormControl, Input, InputLabel, InputAdornment, TextField } from '@mui/
 import SearchIcon from '@mui/icons-material/Search';
 import StyledTable from './StyledTable';
 import styled from 'styled-components'
-
+ 
 export default function StatisticsTable() {
 
     const [searchTerm, setSearchTerm] = useState('')

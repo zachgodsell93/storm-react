@@ -7,10 +7,11 @@ import { Grid } from '@mui/material';
 import Login from './views/core/Login';
 import Dashboard from './views/Dashboard';
 import Documents from './views/Documents';
+import Statistics from './views/Statistics';
+import { Report } from './views/Report'
 
 
 function App() {
-  
 
 
   return (
@@ -22,6 +23,8 @@ function App() {
             <Route path='/login' element={ <Login /> } />
             <Route path='/dashboard' element={ <Dashboard /> } />
             <Route path='/documents' element={ <Documents /> } />
+            <Route path='/statistics' element={ <Statistics /> } />
+            <Route path='/report' element={ <Report />} />
           </Routes>
         </Nav>
       </Router>
