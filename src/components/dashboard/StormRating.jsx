@@ -38,9 +38,9 @@ export default function StormRating() {
                         width={900}
                         height={550}
                         >
-                        <CartesianGrid />
+                        <CartesianGrid vertical={false} />
                         <XAxis type="number" dataKey="x" name="Storm Rating" range={[1, 100]}/>
-                        <YAxis width={110} type="category" dataKey="y" name="Type" allowDuplicatedCategory={false} />
+                        <YAxis width={110} type="category" dataKey="y" name="Type" allowDuplicatedCategory={false} tick={{fill: '#FFF', fontFamily: 'GothamBold'}}/>
                         <ZAxis type="number" name="Customer Turnover" dataKey="z" range={[1, 10000]} />
                         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                         

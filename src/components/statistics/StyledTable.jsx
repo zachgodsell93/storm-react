@@ -1,7 +1,5 @@
 import React from 'react'
 import { DataGrid } from '@mui/x-data-grid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const columns = [
   { field: 'id', headerName: 'ID', width:70},
@@ -17,7 +15,7 @@ const columns = [
 ]
 
 const rows = [
-  { id: 22, name: `${<FontAwesomeIcon icon={solid('crown')} />}`, fileName: 'test123.csv', uploadDate: '29/02/2022 12:29pm'},
+  { id: 22, fileName: 'test123.csv', uploadDate: '29/02/2022 12:29pm'},
   { id: 23, fileName: 'test1.csv', uploadDate: '29/02/2021 12:29pm'},
   { id: 24, fileName: 'test12.csv', uploadDate: '29/02/2020 12:29pm'}
 ];

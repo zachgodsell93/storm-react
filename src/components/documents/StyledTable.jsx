@@ -4,12 +4,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, db, logout } from '../../utils/firebase';
 import { storage } from '../../utils/firebase'
 import { listFiles, listMetaData } from '../../utils/storageFunctions';
+import { Link } from 'react-router-dom';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 200 },
-  { field: 'fileName', headerName: 'Filename', width: 700 },
+  { field: 'fileName', headerName: 'Filename', width: 700,renderCell: (params) => (<Link to='/report'>{params.value}</Link>) },
   { field: 'timeCreated', headerName: 'Upload Date', width: 500 },
-]
+];
 
 const rows = [
   { id: 22, fileName: 'test123.csv', uploadDate: '29/02/2022 12:29pm'},
