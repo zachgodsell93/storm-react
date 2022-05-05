@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './dashboard.css'
 import { Grid } from '@mui/material'
 import styled from 'styled-components'
 import { LeftOne, LeftTwo, LeftThree, LeftFour, RightOne, RightTwo, Ticker, ProgressBar, ProgressBar2, ProgressBar3, SmallGauge, LargeGauge} from '../ui/dashboard/Components'
-
+import { getData } from '../../utils/dashboard/getData'
 
 export default function DataSectionOne() {
 
+    const [data, setData] = useState({})
     
+    var d = getData('zach@zachgodsell.com')
 
     return (
         <Grid container paddingTop={3} wrap='nowrap'>
