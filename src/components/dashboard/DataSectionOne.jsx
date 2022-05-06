@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './dashboard.css'
 import { Grid } from '@mui/material'
 import styled from 'styled-components'
 import { LeftOne, LeftTwo, LeftThree, LeftFour, RightOne, RightTwo, Ticker, ProgressBar, ProgressBar2, ProgressBar3, SmallGauge, LargeGauge} from '../ui/dashboard/Components'
-import { getData } from '../../utils/dashboard/getData'
+import { getDashboardData} from '../../utils/dashboard/getData'
 
 export default function DataSectionOne() {
 
-    const [data, setData] = useState({})
+    const [data, setData] = useState([])
     
-    var d = getData('zach@zachgodsell.com')
+
+    useEffect(() => {
+        getDashboardData('bookmaker1@test.com', 'TB28')
+
+    }, []) 
+    
 
     return (
         <Grid container paddingTop={3} wrap='nowrap'>
@@ -22,7 +27,7 @@ export default function DataSectionOne() {
                         </Grid>
                         <Grid style={{float: 'left', marginLeft: '-115px'}} item xs={12}>
                             <ColoredText color='white'>
-                                85
+                                
                             </ColoredText>
                         </Grid>
 
@@ -105,7 +110,7 @@ export default function DataSectionOne() {
                         <Grid style={{float: 'right', marginRight: '-100px'}} direction={'row'} item xs={12}>
                             <StyledTicker color='#1EE587'></StyledTicker>
                             <ColoredText color='#1EE587'>
-                                &nbsp;$406,200
+                                &nbsp;$
                             </ColoredText>
                         </Grid>
                     </R2>

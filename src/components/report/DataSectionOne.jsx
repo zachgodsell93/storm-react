@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import{ ReactComponent as Logo} from "../../assets/images/SLogoWhite.svg"
 
 export const DataSectionOne = () => {
+    
   return (
     <Grid container>
         <Grid container justifyContent='center' paddingBottom={3}>
