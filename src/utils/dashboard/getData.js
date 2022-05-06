@@ -38,7 +38,7 @@ export async function getData(uuid, client, dateSelected) {
 
 
 export async function getDashboardData(uuid) {
-    var summaryData = {
+    var sD = {
         stormRating: 0,
         totalCustomers: 0,
         totalTurnover: 0,
@@ -61,7 +61,7 @@ export async function getDashboardData(uuid) {
     })
 
     const clientCount = clients.length
-    summaryData.totalCustomers = clientCount
+    sD.totalCustomers = clientCount
 
 
     for (const client of clients) {
@@ -78,10 +78,11 @@ export async function getDashboardData(uuid) {
         const overview = dataSnapshot.data().modules[0].betCode[0]
         const overviewAll = overview.betType[0]
 
-        summaryData.stormRating = summaryData.stormRating + overview.stormScore
-        summaryData.totalTurnover = summaryData.totalTurnover + overviewAll.turnover
-        summaryData.actualRevOnTurnover = summaryData.actualRevOnTurnover + (overviewAll.actualRevenue / overviewAll.turnover) 
-        summaryData.expectRetOnTurnover = summaryData.expectRetOnTurnover + (overviewAll.expectedRevenue / overviewAll.turnover)
+        sD.stormRating = sD.stormRating + overview.stormScore
+        sD.totalTurnover = sD.totalTurnover + overviewAll.turnover
+        sD.totalRevenue = sD.totalRevenue + overviewAll.actualRevenue
+        sD.actualRevOnTurnover = sD.actualRevOnTurnover + (overviewAll.actualRevenue / overviewAll.turnover)*100 
+        sD.expectRetOnTurnover = sD.expectRetOnTurnover + (overviewAll.expectedRevenue / overviewAll.turnover)*100
 
         if (overview.stormCategory === 'Recreational'){
             category.Recreational++
@@ -95,8 +96,24 @@ export async function getDashboardData(uuid) {
     }
 
 
+    // Find the average of certain values based on number of clients
+    for (var key of Object.keys(sD)) {
+        if (!['totalCustomers', 'totalTurnover', 'totalRevenue'].includes(key)) {
+            sD[key] = sD[key]/clientCount 
+            console.log(sD[key])
+        }
+        
+    }
+
+    sD.stormRating = Math.round(sD.stormRating)
+    sD.actualRevOnTurnover = parseFloat(sD.actualRevOnTurnover.toFixed(2)) 
+    sD.expectRetOnTurnover = parseFloat(sD.expectRetOnTurnover.toFixed(2))
+    sD.totalRevenue = parseFloat(sD.totalRevenue.toFixed(2))
+    sD.totalTurnover = parseFloat(sD.totalTurnover.toFixed(2))
+
+    var maxKey = _.max(Object.keys(category), o => category[o]);
     
-    console.log(summaryData)
+    console.log(sD)
     console.log(category)
 }
 
