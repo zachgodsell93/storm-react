@@ -1,6 +1,6 @@
 import { collection, query, where, getDocs, getDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
-
+import _ from 'lodash'
 
 export async function getUploadDates(uuid, client) {
     const docRef = doc(db, uuid, client)
@@ -44,7 +44,7 @@ export async function getDashboardData(uuid) {
         totalTurnover: 0,
         actualRevOnTurnover: 0,
         expectRetOnTurnover: 0,
-        popularStatus: null,
+        popularStatus: '',
         totalRevenue: 0
     }
 
@@ -88,7 +88,7 @@ export async function getDashboardData(uuid) {
             category.Recreational++
         } else if (overview.stormCategory === 'Sharp'){
             category.Sharp++
-        } else {
+        } else if (overview.stormCategory === 'Player') {
             category.Player++
         }
 
@@ -111,10 +111,11 @@ export async function getDashboardData(uuid) {
     sD.totalRevenue = parseFloat(sD.totalRevenue.toFixed(2))
     sD.totalTurnover = parseFloat(sD.totalTurnover.toFixed(2))
 
-    var maxKey = _.max(Object.keys(category), o => category[o]);
+    sD.popularStatus = Object.keys(category).reduce((a,b) => category[a] > category[b] ? a : b);
     
     console.log(sD)
-    console.log(category)
+
+    return sD
 }
 
 

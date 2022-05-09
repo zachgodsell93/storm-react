@@ -7,11 +7,17 @@ import { getDashboardData} from '../../utils/dashboard/getData'
 
 export default function DataSectionOne() {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState({})
+    const [loading, setLoading] = useState(true)
     
 
     useEffect(() => {
-        getDashboardData('bookmaker1@test.com', 'TB28')
+        getDashboardData('bookmaker1@test.com').then(res =>
+            setData(res)
+                
+        ).then(
+            setLoading(false)
+        )
 
     }, []) 
     
@@ -28,6 +34,7 @@ export default function DataSectionOne() {
                         <Grid style={{float: 'left', marginLeft: '-115px'}} item xs={12}>
                             <ColoredText color='white'>
                                 
+                                {data.totalCustomers}
                             </ColoredText>
                         </Grid>
 
@@ -42,7 +49,7 @@ export default function DataSectionOne() {
                         </Grid>
                         <Grid style={{float: 'left', marginLeft: '-105px'}} item xs={12}>
                             <ColoredText color='white'>
-                                $12,637.96
+                                ${data.totalTurnover}
                             </ColoredText>
                         </Grid>
                         
@@ -57,7 +64,7 @@ export default function DataSectionOne() {
                         <Grid style={{float: 'left', marginLeft: '-205px'}} direction={'row'} item xs={12}>
                             <StyledTicker color='#1EE587'></StyledTicker>
                             <ColoredText color='#1EE587'>
-                                &nbsp;3.32%
+                                &nbsp;{data.actualRevOnTurnover}%
                             </ColoredText>
                         </Grid>
                             
@@ -74,7 +81,7 @@ export default function DataSectionOne() {
                         <Grid style={{float: 'left', marginLeft: '-195px'}} item xs={12}>
                             <StyledTicker color='#1EE587'></StyledTicker>
                             <ColoredText color='#1EE587'>
-                                &nbsp;17.24%
+                                &nbsp;{data.expectRetOnTurnover}%
                             </ColoredText>
                         </Grid>
 
@@ -84,7 +91,7 @@ export default function DataSectionOne() {
             </Grid>
 
             <Grid item xs={4} justifyContent='center'>
-                <LGauge />
+                <LGauge text={data.stormRating} />
             </Grid>
 
             <RightGrid item xs={4}>
@@ -96,7 +103,7 @@ export default function DataSectionOne() {
                         <Grid style={{float: 'right', marginRight: '-140px'}} item xs={12}>
                             <StyledTicker color='#FF003B'></StyledTicker>
                             <ColoredText color='#FF003B'>
-                                &nbsp;Sharp
+                                &nbsp;{data.popularStatus}
                             </ColoredText>
                         </Grid>
                     </R1>
@@ -110,7 +117,7 @@ export default function DataSectionOne() {
                         <Grid style={{float: 'right', marginRight: '-100px'}} direction={'row'} item xs={12}>
                             <StyledTicker color='#1EE587'></StyledTicker>
                             <ColoredText color='#1EE587'>
-                                &nbsp;$
+                                &nbsp;${data.totalRevenue}
                             </ColoredText>
                         </Grid>
                     </R2>
