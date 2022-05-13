@@ -130,8 +130,8 @@ export const PR1 = ({
             <title>Progress</title>
             <defs>
                 <linearGradient id="pbar1" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color={color}/>
-                    <stop offset={percent} stop-color="#858A8F"/>
+                    <stop offset={percent + '%'} stop-color={color}/>
+                    <stop offset={percent + '%'} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
@@ -172,8 +172,8 @@ export const PR2 = ({
             <title>Progress</title>
             <defs>
                 <linearGradient id="pbar2" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color={color}/>
-                    <stop offset={percent} stop-color="#858A8F"/>
+                    <stop offset={percent + '%'} stop-color={color}/>
+                    <stop offset={percent + '%'} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
@@ -214,8 +214,8 @@ export const PR3 = ({
             <title>Progress</title>
             <defs>
                 <linearGradient id="pbar3" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color={color}/>
-                    <stop offset={percent} stop-color="#858A8F"/>
+                    <stop offset={percent + '%'} stop-color={color}/>
+                    <stop offset={percent + '%'} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
@@ -256,8 +256,8 @@ export const PR4 = ({
             <title>Progress</title>
             <defs>
                 <linearGradient id="pbar4" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color={color}/>
-                    <stop offset={percent} stop-color="#858A8F"/>
+                    <stop offset={percent + '%'} stop-color={color}/>
+                    <stop offset={percent + '%'} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
@@ -298,8 +298,8 @@ export const PR5 = ({
             <title>Progress</title>
             <defs>
                 <linearGradient id="pbar5" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color={color}/>
-                    <stop offset={percent} stop-color="#858A8F"/>
+                    <stop offset={percent + '%'} stop-color={color}/>
+                    <stop offset={percent + '%'} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
@@ -340,8 +340,8 @@ export const PR6 = ({
             <title>Progress</title>
             <defs>
                 <linearGradient id="pbar6" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color={color}/>
-                    <stop offset={percent} stop-color="#858A8F"/>
+                    <stop offset={percent + '%'} stop-color={color}/>
+                    <stop offset={percent + '%'} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
@@ -382,8 +382,8 @@ export const PR7 = ({
             <title>Progress</title>
             <defs>
                 <linearGradient id="pbar7" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color={color}/>
-                    <stop offset={percent} stop-color="#858A8F"/>
+                    <stop offset={percent + '%'} stop-color={color}/>
+                    <stop offset={percent + '%'} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
@@ -424,8 +424,8 @@ export const PR8 = ({
             <title>Progress</title>
             <defs>
                 <linearGradient id="pbar8" x1="0%" y1="0%" x2="100%" y2="20%" gradientUnits="userSpaceOnUse" gradientTransform="rotate(18)">
-                    <stop offset={percent} stop-color={color}/>
-                    <stop offset={percent} stop-color="#858A8F"/>
+                    <stop offset={percent + '%'} stop-color={color}/>
+                    <stop offset={percent + '%'} stop-color="#858A8F"/>
                 </linearGradient>
             </defs>
             <g id="🙋‍♂️-Punters" stroke-width="1" >
@@ -471,7 +471,8 @@ export const SmallGauge = ({
     text = 34,
     content1 = '72',
     content2 = '73',
-    content3 = '23', 
+    content3 = '23',
+    content4 = '27', 
     className}
     ) => {
     return(
@@ -494,9 +495,10 @@ export const SmallGauge = ({
                     <circle id="Oval-Copy-3" stroke-width="7.66584" cx="160" cy="160" r="101.12708"
                     
                     ></circle>
-                    <text x="50%" y="35%" dominant-baseline="middle" font-size="26px" font-weight="bold" font-family="GothamLight" stroke='white' text-anchor="middle">{content1}</text>
-                    <text x="50%" y="50%" dominant-baseline="middle" font-size="26px" font-weight="bold" font-family="GothamLight" stroke='#7E25FF' text-anchor="middle">{content2}</text>
-                    <text x="50%" y="65%" dominant-baseline="middle" font-size="26px" font-weight="bold" font-family="GothamLight" stroke='#E584F3' text-anchor="middle">{content3}</text>
+                    <text x="50%" y="30%" dominant-baseline="middle" font-size="26px" font-weight="bold" font-family="GothamLight" stroke='white' text-anchor="middle">{content1}%</text>
+                    <text x="50%" y="43%" dominant-baseline="middle" font-size="26px" font-weight="bold" font-family="GothamLight" stroke='#7E25FF' text-anchor="middle">{content2}%</text>
+                    <text x="50%" y="57%" dominant-baseline="middle" font-size="26px" font-weight="bold" font-family="GothamLight" stroke='#E584F3' text-anchor="middle">{content3}%</text>
+                    <text x="50%" y="70%" dominant-baseline="middle" font-size="26px" font-weight="bold" font-family="GothamLight" stroke='#9828EF' text-anchor="middle">{content4}%</text>
                 </g>
             </g>
         </svg>

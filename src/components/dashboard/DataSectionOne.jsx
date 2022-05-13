@@ -4,8 +4,13 @@ import { Grid } from '@mui/material'
 import styled from 'styled-components'
 import { LeftOne, LeftTwo, LeftThree, LeftFour, RightOne, RightTwo, Ticker, ProgressBar, ProgressBar2, ProgressBar3, SmallGauge, LargeGauge} from '../ui/dashboard/Components'
 import { getDashboardData} from '../../utils/dashboard/getData'
+import { Spinner } from 'react-bootstrap'
+import { Triangle } from 'react-loader-spinner'
+import { FamilyRestroomOutlined } from '@mui/icons-material'
 
-export default function DataSectionOne() {
+
+
+export default function DataSectionOne({}) {
 
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true)
@@ -15,9 +20,9 @@ export default function DataSectionOne() {
         getDashboardData('bookmaker1@test.com').then(res =>
             setData(res)
                 
-        ).then(
+        ).then(() => {
             setLoading(false)
-        )
+        }) 
 
     }, []) 
     
@@ -33,8 +38,7 @@ export default function DataSectionOne() {
                         </Grid>
                         <Grid style={{float: 'left', marginLeft: '-115px'}} item xs={12}>
                             <ColoredText color='white'>
-                                
-                                {data.totalCustomers}
+                                {loading ? <Triangle height='40' color='white' width="40" ariaLabel="loading-indicator" />:data.totalCustomers }
                             </ColoredText>
                         </Grid>
 
@@ -49,7 +53,7 @@ export default function DataSectionOne() {
                         </Grid>
                         <Grid style={{float: 'left', marginLeft: '-105px'}} item xs={12}>
                             <ColoredText color='white'>
-                                ${data.totalTurnover}
+                                {loading ? <Triangle height='40' color='white' width="40" ariaLabel="loading-indicator" />:`$${data.totalTurnover}`}
                             </ColoredText>
                         </Grid>
                         
@@ -62,10 +66,15 @@ export default function DataSectionOne() {
                             <GreyText>Actual Revenue on Turnover</GreyText>
                         </Grid>
                         <Grid style={{float: 'left', marginLeft: '-205px'}} direction={'row'} item xs={12}>
-                            <StyledTicker color='#1EE587'></StyledTicker>
-                            <ColoredText color='#1EE587'>
-                                &nbsp;{data.actualRevOnTurnover}%
-                            </ColoredText>
+                            {loading ? <ColoredText><Triangle height='40' color='white' width="40" ariaLabel="loading-indicator" /></ColoredText>:
+                            <>
+                                <StyledTicker color='#1EE587'></StyledTicker>
+                                <ColoredText color='#1EE587'>
+                                    &nbsp;{data.actualRevOnTurnover}%
+                                </ColoredText>
+                            </>
+                            }
+                            
                         </Grid>
                             
 
@@ -79,10 +88,14 @@ export default function DataSectionOne() {
                             <GreyText>Expect Return on Turnover</GreyText>
                         </Grid>
                         <Grid style={{float: 'left', marginLeft: '-195px'}} item xs={12}>
-                            <StyledTicker color='#1EE587'></StyledTicker>
-                            <ColoredText color='#1EE587'>
-                                &nbsp;{data.expectRetOnTurnover}%
-                            </ColoredText>
+                        {loading ? <ColoredText><Triangle height='40' color='white' width="40" ariaLabel="loading-indicator" /></ColoredText>:
+                            <>
+                                <StyledTicker color='#1EE587'></StyledTicker>
+                                <ColoredText color='#1EE587'>
+                                    &nbsp;{data.expectRetOnTurnover}%
+                                </ColoredText>
+                            </>
+                            }
                         </Grid>
 
                     </L4>
@@ -101,10 +114,14 @@ export default function DataSectionOne() {
                             <GreyText>Most Popular Status</GreyText>
                         </Grid>
                         <Grid style={{float: 'right', marginRight: '-140px'}} item xs={12}>
+                            {loading ? <ColoredText><Triangle height='40' color='white' width="40" ariaLabel="loading-indicator" /></ColoredText>:
+                            <>
                             <StyledTicker color='#FF003B'></StyledTicker>
                             <ColoredText color='#FF003B'>
                                 &nbsp;{data.popularStatus}
                             </ColoredText>
+                            </>
+                            }
                         </Grid>
                     </R1>
                 </Grid>
@@ -115,10 +132,14 @@ export default function DataSectionOne() {
                             <GreyText>Total Revenue</GreyText>
                         </Grid>
                         <Grid style={{float: 'right', marginRight: '-100px'}} direction={'row'} item xs={12}>
+                        {loading ? <ColoredText><Triangle height='40' color='white' width="40" ariaLabel="loading-indicator" /></ColoredText>:
+                            <>
                             <StyledTicker color='#1EE587'></StyledTicker>
                             <ColoredText color='#1EE587'>
                                 &nbsp;${data.totalRevenue}
                             </ColoredText>
+                            </>
+                            }
                         </Grid>
                     </R2>
                 </Grid>
@@ -130,15 +151,15 @@ export default function DataSectionOne() {
                     <Grid item direction='column' xs={4}>
                         <Grid item xs={12}>
                             <h5 style={{marginBottom: '-70px', marginLeft: '-380px', color: 'white'}}>Recreational</h5>
-                            <Progress1 percent='89%' color1='#FFF' />
+                            <Progress1 percent='100%' color1='#FFF' />
                         </Grid> 
                         <Grid item xs={12}>
                             <h5 style={{marginBottom: '-15px', marginLeft: '-420px', color: 'white'}}>Player</h5>
-                            <Progress2 percent='25%' color='#7E25FF' />
+                            <Progress2 percent='0%' color='#7E25FF' />
                         </Grid> 
                         <Grid item xs={12}>
                             <h5 style={{marginBottom: '-15px', marginLeft: '-420px', color: 'white'}}>Sharp</h5>
-                            <Progress3 percent='46%' color='#E584F3' />
+                            <Progress3 percent='0%' color='#E584F3' />
                         </Grid> 
                     
                     </Grid>

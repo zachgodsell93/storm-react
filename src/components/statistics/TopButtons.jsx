@@ -26,12 +26,12 @@ export default function TopButtons(props) {
             </Grid>
             <Grid item>
                 <Link to='/documents' style={{ textDecoration: 'none' }}>
-                    <DashboardButton active text='Documents' />
+                    <DashboardButton text='Documents' />
                 </Link>
             </Grid>
             <Grid item>
                 <Link to='/statistics' style={{ textDecoration: 'none' }}>
-                    <DashboardButton text='Statistics' />
+                    <DashboardButton active text='Statistics' />
                 </Link>
             </Grid>
         </StyledGrid>

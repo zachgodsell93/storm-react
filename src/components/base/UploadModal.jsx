@@ -4,20 +4,22 @@ import { storage } from '../../utils/firebase'
 import { ref, uploadBytes } from 'firebase/storage';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../utils/firebase';
-import { DragNDrop } from './DragNDrop';
+import { FileUploader } from "react-drag-drop-files";
 
 export default function UploadModal(props) {
 
-    const [file, setFile] = useState();
+    const fileTypes = ['CSV']
+
+    const [file, setFile] = useState(null);
     const [user, loading, error] = useAuthState(auth)
     const [name, setName] = useState("");
 
-    const upload = () => {
-        if(file == null)
-        return;
-    uploadBytes(ref(storage, `${user?.email}/${file.name}`), file).then((snapshot) => {
-        props.closeModal(false);
-        // alert(`File successfully uploaded to ${user?.email}/${file.name}`)
+    const upload = (file) => {
+
+        setFile(file)
+        uploadBytes(ref(storage, `${user?.email}/${file[0].name}`), file).then((snapshot) => {
+            props.closeModal(false);
+        
     })
     };
     
@@ -31,7 +33,13 @@ export default function UploadModal(props) {
                 {"Upload CSV"}
             </DialogTitle>
             <DialogContent>
-            <DragNDrop />
+
+                <FileUploader
+                    multiple={true}
+                    handleChange={upload}
+                    name="file"
+                    types={fileTypes}
+                />
             {/* <TextField fullWidth 
                 id='password' 
                 type='file'

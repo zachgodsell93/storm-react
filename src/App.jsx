@@ -9,7 +9,7 @@ import Dashboard from './views/Dashboard';
 import Documents from './views/Documents';
 import Statistics from './views/Statistics';
 import { Report } from './views/Report'
-
+import '@hookstate/devtools'
 
 function App() {
 

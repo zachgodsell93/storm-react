@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Grid } from '@mui/material';
 import styled from 'styled-components'
 import { LineChart, 
@@ -11,52 +11,27 @@ import { LineChart,
     ResponsiveContainer 
 } from 'recharts';
 import BLegend from '../../assets/images/report/Legend.png'
+import store from '../../utils/store';
+import { useState as useGlobalState } from '@hookstate/core'
+import { getChartData } from '../../utils/dashboard/getData';
 
-export const Chart = () => {
-    const data = [
-        {
-          name: '100',
-          uv: 10000,
-          pv: 12000,
-          amt: 2400,
-        },
-        {
-          name: '200',
-          uv: 15000,
-          pv: 16000,
-          amt: 2210,
-        },
-        {
-          name: '300',
-          uv: 29000,
-          pv: 32000,
-          amt: 2290,
-        },
-        {
-          name: '400',
-          uv: 39500,
-          pv: 40000,
-          amt: 2000,
-        },
-        {
-          name: '500',
-          uv: 51000,
-          pv: 56000,
-          amt: 2181,
-        },
-        {
-          name: '600',
-          uv: 63000,
-          pv: 64000,
-          amt: 2500,
-        },
-        {
-          name: '700',
-          uv: 69000,
-          pv: 70000,
-          amt: 2100,
-        },
-      ];
+const Chart = ({sport}) => {
+
+    const [currentData, setCurrentData] = useState()
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setLoading(true)
+        getChartData('bookmaker1@test.com', 'TB28', '2022-05-05').then(res =>
+            setCurrentData(res[`${sport}`])    
+        ).then(
+            console.log(currentData)
+        )
+    //   setLoading(true)
+    // //   console.log(allData[`${sport}Data`]['dataSectionOne']['bottomGraph'].get())
+    //   setCurrentData(allData[`${sport}Data`]['dataSectionOne']['bottomGraph'].get())
+    //   setLoading(false)
+  }, [])
     
 
   return (
@@ -69,7 +44,7 @@ export const Chart = () => {
                 <LineChart
                 width={1200}
                 height={500}
-                data={data}
+                data={currentData}
                 margin={{
                     top: 5,
                     right: 30,
@@ -85,11 +60,11 @@ export const Chart = () => {
                         <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color='#8B36F7' />
                     </filter>
                 </defs>
-                <XAxis dataKey="name" />
+                <XAxis dataKey="dt" />
                 <YAxis axisLine={false} tickFormatter={(tick) => {return `$${tick}`}}/>
                 <CartesianGrid vertical={false} />
-                <Line dot={false} filter='url(#shadowPurple)' stroke='#8B36F7' strokeWidth={2} dataKey="pv" />
-                <Line type="linear" dot={false} filter='url(#shadowBlue)' stroke='#00A8F0'strokeWidth={2}  dataKey="uv" />
+                <Line dot={false} filter='url(#shadowPurple)' stroke='#8B36F7' strokeWidth={2} dataKey="rtExpRev" />
+                <Line type="linear" dot={false} filter='url(#shadowBlue)' stroke='#00A8F0'strokeWidth={2}  dataKey="rtActRev" />
                 </LineChart>
             </ResponsiveContainer>
         </Grid>
@@ -106,4 +81,6 @@ const H3 = styled.h3`
     font-size: 24px;
     font-family: 'GothamMedium';
 `
+
+export default Chart
 

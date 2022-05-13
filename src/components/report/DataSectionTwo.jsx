@@ -1,13 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Grid } from '@mui/material'
-import { SmallGauge } from '../ui/dashboard/Components'
+import { SmallGauge } from '../ui/report/Components'
 import { PR1, PR2, PR3, PR4, PR5, PR6, PR7, PR8 } from '../ui/report/Components'
+import store from '../../utils/store'
+import { useState as useGlobalState } from '@hookstate/core'
 
-export const DataSectionTwo = () => {
-  return (
-    <>
-        <Grid direction="row" container paddingTop={4}>
+export const DataSectionTwo = ({sport, bonus}) => {
+    const { allData, sportData, dataReady } = useGlobalState(store)
+    const [currentData, setCurrentData] = useState()
+    const [loading, setLoading] = useState(true)
+    
+    useEffect(() => {
+        setLoading(true)
+        console.log(allData[`${sport}Data`]['dataSectionTwo'][bonus].get())
+        setCurrentData(allData[`${sport}Data`]['dataSectionTwo'][bonus].get())
+        setLoading(false)
+    }, [])
+
+    return (
+        <>
+        {loading ? null :
+        <>
+         <Grid direction="row" container paddingTop={4}>
             <Grid  marginLeft={15} item xs={5}>
                 <Title>TURNOVER BY BET CODE</Title>
             </Grid>
@@ -20,24 +35,28 @@ export const DataSectionTwo = () => {
             <Grid item direction='row' xs={6}>
                 <Grid container marginLeft={15}>
                     <Grid item xs={3}>
-                        <SGauge />
+                        <SGauge 
+                            content1={Math.round((currentData.turnoverBetCodePct_horses)*100)} 
+                            content2={Math.round((currentData.turnoverBetCodePct_greyhounds)*100)} 
+                            content3={Math.round((currentData.turnoverBetCodePct_harness)*100)}
+                            content4={Math.round((currentData.turnoverBetCodePct_sport)*100)} />
                     </Grid>
                     <Grid item direction='column' xs={8}>
                         <Grid item xs={12} sx={{maxHeight:'40px'}}>
                             <h5 style={{color: 'white', marginLeft: '120px', textAlign:'left'}}>Horse</h5>
-                            <P1 percent='45%' color='#FFF' />
+                            <P1 percent={parseFloat((currentData.turnoverBetCodePct_horses)*100).toFixed(2)} color='#FFF' />
                         </Grid> 
                         <Grid item xs={12} sx={{maxHeight:'40px'}}>
                             <h5 style={{color: 'white', marginLeft: '120px', textAlign:'left'}}>Greyhound</h5>
-                            <P2 percent='25%' color='#A618F8' />
+                            <P2 percent={parseFloat((currentData.turnoverBetCodePct_greyhounds)*100).toFixed(2)} color='#A618F8' />
                         </Grid> 
                         <Grid item xs={12} sx={{maxHeight:'40px'}}>
                             <h5 style={{color: 'white', marginLeft: '120px', textAlign:'left'}}>Harness</h5>
-                            <P3 percent='98%' color='#7E24FF' />
+                            <P3 percent={parseFloat((currentData.turnoverBetCodePct_harness)*100).toFixed(2)} color='#7E24FF' />
                         </Grid> 
                         <Grid item xs={12} sx={{maxHeight:'40px'}}>
                             <h5 style={{color: 'white', marginLeft: '120px', textAlign:'left'}}>Sport</h5>
-                            <P4 percent='46%' color='#E584F3' />
+                            <P4 percent={parseFloat((currentData.turnoverBetCodePct_sport)*100).toFixed(2)} color='#E584F3' />
                         </Grid>
                     </Grid>
                     
@@ -47,34 +66,41 @@ export const DataSectionTwo = () => {
             <Grid item xs={6}>
             <Grid container>
                     <Grid item xs={3}>
-                        <SGauge />
+                        <SGauge 
+                        content1={Math.round((currentData.turnoverBetTypePct_fixed)*100)} 
+                        content2={Math.round((currentData.turnoverBetTypePct_exotics)*100)} 
+                        content3={Math.round((currentData.turnoverBetTypePct_multi)*100)}
+                        content4={Math.round((currentData.turnoverBetTypePct_tote)*100)} />
                     </Grid>
                     <Grid item direction='column' xs={8}>
                         <Grid item xs={12} sx={{maxHeight:'40px'}}>
                             <h5 style={{color: 'white', marginLeft: '120px', textAlign:'left'}}>Fixed</h5>
-                            <P5 percent='89%' color='#FFF' />
+                            <P5 percent={parseFloat((currentData.turnoverBetTypePct_fixed)*100).toFixed(2)} color='#FFF' />
                         </Grid> 
                         <Grid item xs={12} sx={{maxHeight:'40px'}}>
                             <h5 style={{color: 'white', marginLeft: '120px', textAlign:'left'}}>Exotics</h5>
-                            <P6 percent='25%' color='#A618F8' />
+                            <P6 percent={parseFloat((currentData.turnoverBetTypePct_exotics)*100).toFixed(2)} color='#A618F8' />
                         </Grid> 
                         <Grid item xs={12} sx={{maxHeight:'40px'}}>
                             <h5 style={{color: 'white', marginLeft: '120px', textAlign:'left'}}>Multi</h5>
-                            <P7 percent='12%' color='#7E24FF' />
+                            <P7 percent={parseFloat((currentData.turnoverBetTypePct_multi)*100).toFixed(2)} color='#7E24FF' />
                         </Grid> 
                         <Grid item xs={12} sx={{maxHeight:'40px'}}>
                             <h5 style={{color: 'white', marginLeft: '120px', textAlign:'left'}}>Tote</h5>
-                            <P8 percent='46%' color='#E584F3' />
+                            <P8 percent={parseFloat((currentData.turnoverBetTypePct_tote)*100).toFixed(2)} color='#E584F3' />
                         </Grid>
                     </Grid>
                     
                 </Grid>
             </Grid>
         </Grid>
-        
-        
-    </>
-  )
+        </>
+        }
+           
+            
+            
+        </>
+    )
 }
 
 const Title = styled.h4`

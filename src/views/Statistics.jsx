@@ -1,6 +1,6 @@
 import React from 'react'
 import StyledContainer from '../components/ui/StyledContainer'
-import TopButtons from '../components/ui/TopButtons'
+import TopButtons from '../components/statistics/TopButtons'
 import StatisticsTable from '../components/statistics/StatisticsTable'
 
 export default function Statistics() {

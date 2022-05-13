@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Grid } from '@mui/material'
 import styled from 'styled-components'
 import { ArrowBack, FormatAlignLeft, FormatAlignCenter, FormatAlignRight } from '@mui/icons-material';
@@ -7,16 +7,18 @@ import { ToggleButtonGroup, ToggleButton,  } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { SoccerBall, Horse } from '../ui/report/Components';
 
-export const TopRow = () => {
+export const TopRow = ({sportFilter, bonusFilter}) => {
 
-    const [alignment, setAlignment] = useState('left');
+    const [sport, setSport] = useState('all');
 
-    const handleAlignment = (event, newAlignment) => {
-        if (newAlignment !== null) {
-          setAlignment(newAlignment);
+
+
+    const handleSport = (event, newSport) => {
+        if (newSport !== null) {
+          setSport(newSport);
+          sportFilter(newSport)
         }
       };
-    
 
     return (
         <Grid container padding={6}>
@@ -34,24 +36,24 @@ export const TopRow = () => {
             </Grid>
             <Grid item xs={4}>
                 <ToggleButtonGroup
-                    value={alignment}
+                    value={sport}
                     exclusive
-                    onChange={handleAlignment}
+                    onChange={handleSport}
                     aria-label="text alignment"
                 >
-                    <StyledToggle className={alignment === 'left' ? 'active': null} value="left" aria-label="left aligned">
+                    <StyledToggle className={sport === 'horse' ? 'active': null} value="horse" aria-label="left aligned">
                         <Horse />
                     </StyledToggle>
-                    <StyledToggle className={alignment === 'left' ? 'active': null} value="center" aria-label="centered">
+                    <StyledToggle className={sport === 'all' ? 'active': null} value="all" aria-label="centered">
                         <p style={{margin: '0px', padding: '0px', color: '#FFF', fontFamily: 'GothamMedium'}}>All</p>
                     </StyledToggle>
-                    <StyledToggle className={alignment === 'left' ? 'active': null} value="right" aria-label="right aligned">
+                    <StyledToggle className={sport === 'sport' ? 'active': null} value="sport" aria-label="right aligned">
                         <SoccerBall />
                     </StyledToggle>
                 </ToggleButtonGroup>
             </Grid>
             <Grid item xs={4}>
-                <FormControlLabel sx={{color: 'white'}} control={<Checkbox defaultChecked />} label="Include Bonus Bets" />
+                <FormControlLabel sx={{color: 'white'}} control={<Checkbox onChange={e => bonusFilter(e.target.checked)} />} label="Include Bonus Bets" />
             </Grid>
         </Grid>
         
