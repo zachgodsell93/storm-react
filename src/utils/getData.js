@@ -1,6 +1,5 @@
-import { collection, query, where, getDocs, getDoc, doc } from "firebase/firestore";
-import { db } from "../firebase";
-import _ from 'lodash'
+import { collection, getDocs, getDoc, doc } from "firebase/firestore";
+import { db } from "./firebase";
 
 export async function getUploadDates(uuid, client) {
     const docRef = doc(db, uuid, client)
@@ -308,6 +307,7 @@ export async function getStatisticsData(uuid) {
         console.log(data)
         var summary = {
             id: Math.random(),
+            status: `${data.stormCategory}`,
             name: client,
             stormScore: Math.round(data.stormScore),
             location: 'NSW',

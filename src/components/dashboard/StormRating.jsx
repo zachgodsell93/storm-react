@@ -17,7 +17,7 @@ import {
     ResponsiveContainer,
   } from 'recharts';
 
-export default function StormRating() {
+export const StormRating = () => {
     return (
         <>
             <Grid container paddingTop={5} paddingBottom={5} justifyContent='center'>

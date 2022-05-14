@@ -6,16 +6,12 @@ import { LineChart,
     XAxis, 
     YAxis, 
     CartesianGrid, 
-    Tooltip, 
-    Legend, 
     ResponsiveContainer 
 } from 'recharts';
 import BLegend from '../../assets/images/report/Legend.png'
-import store from '../../utils/store';
-import { useState as useGlobalState } from '@hookstate/core'
-import { getChartData } from '../../utils/dashboard/getData';
+import { getChartData } from '../../utils/getData';
 
-const Chart = ({sport}) => {
+export const Chart = ({sport}) => {
 
     const [currentData, setCurrentData] = useState()
     const [loading, setLoading] = useState(true)
@@ -24,13 +20,7 @@ const Chart = ({sport}) => {
         setLoading(true)
         getChartData('bookmaker1@test.com', 'TB28', '2022-05-05').then(res =>
             setCurrentData(res[`${sport}`])    
-        ).then(
-            console.log(currentData)
         )
-    //   setLoading(true)
-    // //   console.log(allData[`${sport}Data`]['dataSectionOne']['bottomGraph'].get())
-    //   setCurrentData(allData[`${sport}Data`]['dataSectionOne']['bottomGraph'].get())
-    //   setLoading(false)
   }, [])
     
 
@@ -82,5 +72,4 @@ const H3 = styled.h3`
     font-family: 'GothamMedium';
 `
 
-export default Chart
 

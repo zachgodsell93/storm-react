@@ -3,14 +3,12 @@ import './dashboard.css'
 import { Grid } from '@mui/material'
 import styled from 'styled-components'
 import { LeftOne, LeftTwo, LeftThree, LeftFour, RightOne, RightTwo, Ticker, ProgressBar, ProgressBar2, ProgressBar3, SmallGauge, LargeGauge} from '../ui/dashboard/Components'
-import { getDashboardData} from '../../utils/dashboard/getData'
-import { Spinner } from 'react-bootstrap'
+import { getDashboardData} from '../../utils/getData'
 import { Triangle } from 'react-loader-spinner'
-import { FamilyRestroomOutlined } from '@mui/icons-material'
 
 
 
-export default function DataSectionOne({}) {
+export const DataSectionOne = () => {
 
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true)

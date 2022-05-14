@@ -7,14 +7,14 @@ import AppBar from '@mui/material/AppBar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import { Logo, PBBC } from '../ui/SVG';
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { logout } from '../../utils/firebase.js'
 import { Button } from '@mui/material';
-import UploadModal from './UploadModal';
+import { UploadModal } from './UploadModal';
 
 const withoutSidebarRoutes = ['/login', '/register']
 
-export default function Nav({children}) {
+export const Nav = ({children}) => {
 
     const [open, setOpen] = useState(false)
 

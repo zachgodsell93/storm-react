@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Grid } from '@mui/material'
 import React from 'react'
 
-export default function StyledContainer(props) {
+export const StyledContainer = (props) => {
 
     const Container = styled(Grid)`
     background-color: ${props.color};

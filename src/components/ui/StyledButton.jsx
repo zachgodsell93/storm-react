@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '@mui/material'
 
-export default function StyledButton(props) { 
+export const StyledButton = (props) => { 
   const SButton = styled(Button)`
   && {
       height: 56px;

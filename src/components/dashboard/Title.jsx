@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import{ ReactComponent as Logo} from "../../assets/images/SLogoWhite.svg"
 
-export default function Title() {
+export const Title = () => {
 
     const T = styled.h1`
         font-family: "GothamBold";

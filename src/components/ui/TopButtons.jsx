@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Grid } from '@mui/material'
-import DashboardButton from './DashboardButton'
+import {DashboardButton} from './DashboardButton'
 import { Link } from 'react-router-dom'
 
-export default function TopButtons(props) {
+export const TopButtons = (props) => {
     const StyledGrid = styled(Grid)`
         padding: 2rem 3rem 2rem 3rem;
 

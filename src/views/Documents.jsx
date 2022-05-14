@@ -1,8 +1,8 @@
 import React from 'react'
-import DocumentTable from '../components/documents/DocumentTable'
+import {DocumentTable} from '../components/documents/DocumentTable'
 
-import StyledContainer from '../components/ui/StyledContainer'
-import TopButtons from '../components/documents/TopButtons'
+import {StyledContainer} from '../components/ui/StyledContainer'
+import {TopButtons} from '../components/documents/TopButtons'
 
 export default function Documents() {
   return (

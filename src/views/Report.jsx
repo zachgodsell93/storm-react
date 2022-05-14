@@ -1,20 +1,17 @@
-import React, { useEffect, useState, lazy, Suspense } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DataSectionOne } from '../components/report/DataSectionOne'
 import { DataSectionTwo } from '../components/report/DataSectionTwo'
 import { TopRow } from '../components/report/TopRow'
-import StyledContainer from '../components/ui/StyledContainer'
-// import { Chart } from '../components/report/Chart' 
+import {StyledContainer} from '../components/ui/StyledContainer'
+import { Chart } from '../components/report/Chart' 
 
-import { getData } from '../utils/dashboard/getData'
+import { getData } from '../utils/getData'
 import store from '../utils/store'
 import { useState as useGlobalState } from '@hookstate/core'
 
-const Chart  = lazy(() => import('../components/report/Chart'))
-
 export const Report = () => {
 
-    const { allData, sportData, horseData, dataReady } = useGlobalState(store)
-    const [baseData, setBaseData] = useState(null)
+    const { allData } = useGlobalState(store)
     const [loaded, setLoaded] = useState(false)
 
     const [bonusFilter, setBonusFilter] = useState('bonus')
@@ -53,9 +50,8 @@ export const Report = () => {
             <TopRow bonusFilter={bonusState} sportFilter={sportState}/>
             <DataSectionOne bonus={bonusFilter} sport={sportFilter}/>
             <DataSectionTwo bonus={bonusFilter} sport={sportFilter} />
-            <Suspense fallback={<></>}>
-              <Chart sport={sportFilter}/>
-            </Suspense>
+            <Chart sport={sportFilter}/>
+
             
           </> 
         :

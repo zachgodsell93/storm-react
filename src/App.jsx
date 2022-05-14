@@ -1,8 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import Nav from './components/base/Nav';
-import styled from 'styled-components'
-import { Grid } from '@mui/material';
+import {Nav} from './components/base/Nav';
 
 import Login from './views/core/Login';
 import Dashboard from './views/Dashboard';

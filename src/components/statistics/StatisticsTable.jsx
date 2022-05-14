@@ -1,11 +1,11 @@
 import { Grid } from '@mui/material'
 import React, { useState } from 'react'
-import { FormControl, Input, InputLabel, InputAdornment, TextField } from '@mui/material'
+import { InputAdornment, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
-import StyledTable from './StyledTable';
+import {StyledTable} from './StyledTable';
 import styled from 'styled-components'
  
-export default function StatisticsTable() {
+export const StatisticsTable = () => {
 
     const [searchTerm, setSearchTerm] = useState('')
 

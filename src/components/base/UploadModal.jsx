@@ -1,22 +1,18 @@
 import React, { useState } from 'react'
-import {Dialog, DialogTitle, DialogActions, Button, DialogContent, TextField} from '@mui/material'
+import {Dialog, DialogTitle, DialogActions, Button, DialogContent} from '@mui/material'
 import { storage } from '../../utils/firebase'
 import { ref, uploadBytes } from 'firebase/storage';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../utils/firebase';
 import { FileUploader } from "react-drag-drop-files";
 
-export default function UploadModal(props) {
+export const UploadModal = (props) => {
 
     const fileTypes = ['CSV']
 
-    const [file, setFile] = useState(null);
-    const [user, loading, error] = useAuthState(auth)
-    const [name, setName] = useState("");
+    const [user] = useAuthState(auth)
 
     const upload = (file) => {
-
-        setFile(file)
         uploadBytes(ref(storage, `${user?.email}/${file[0].name}`), file).then((snapshot) => {
             props.closeModal(false);
         

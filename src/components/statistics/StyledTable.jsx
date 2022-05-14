@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { DataGrid } from '@mui/x-data-grid';
-import { getStatisticsData } from '../../utils/dashboard/getData';
-import LoadingOverlay from 'react-loading-overlay';
+import { getStatisticsData } from '../../utils/getData';
 
 const columns = [
   { field: 'id', headerName: 'ID', width:70, hide: true},
@@ -18,16 +17,16 @@ const columns = [
 
 
  
-export default function StyledTable() {
+export const StyledTable = () => {
   const [tableData, setTableData] = useState([])
-  const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
-    setLoading(true)
+
     getStatisticsData('bookmaker1@test.com').then(res =>
       setTableData(res)
     )
-    setLoading(false)
+
   
   }, [])
   

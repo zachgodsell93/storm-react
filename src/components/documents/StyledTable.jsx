@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth, db, logout } from '../../utils/firebase';
-import { storage } from '../../utils/firebase'
+import { auth } from '../../utils/firebase';
 import { listFiles, listMetaData } from '../../utils/storageFunctions';
 import { Link } from 'react-router-dom';
 
@@ -12,21 +11,14 @@ const columns = [
   { field: 'timeCreated', headerName: 'Upload Date', width: 500 },
 ];
 
-const rows = [
-  { id: 22, fileName: 'test123.csv', uploadDate: '29/02/2022 12:29pm'},
-  { id: 23, fileName: 'test1.csv', uploadDate: '29/02/2021 12:29pm'},
-  { id: 24, fileName: 'test12.csv', uploadDate: '29/02/2020 12:29pm'}
-];
 
-export default function StyledTable() {
-  const [user, loading, error] = useAuthState(auth)
-  const [files, setFiles] = useState([])
+export const StyledTable = () => {
+  const [user] = useAuthState(auth)
   const [fileData, setFileData] = useState([])
 
   
 
   useEffect(() => {
-    const mdata = []
     listFiles(`${user?.email}`).then((res) => {
       res.forEach((ref) => {
         console.log(ref)

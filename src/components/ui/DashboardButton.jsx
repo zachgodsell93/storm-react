@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '@mui/material'
 
-export default function DashboardButton({
+export const DashboardButton = ({
     text, 
     active=false,
-}) {
+}) => {
     let textColor = "#000"
     let backgroundColor = "#FFF"
 
