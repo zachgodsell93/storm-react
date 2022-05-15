@@ -19,6 +19,7 @@ const columns = [
  
 export const StyledTable = () => {
   const [tableData, setTableData] = useState([])
+  const [baseTableData, setBaseTableData] = useState([])
 
 
   useEffect(() => {

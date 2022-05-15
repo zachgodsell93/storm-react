@@ -12,6 +12,7 @@ export const DocumentTable = () => {
 
     function handleSearch(e) {
         setSearchTerm(e.target.value)
+
     }
     return (
         <>
@@ -28,7 +29,7 @@ export const DocumentTable = () => {
             </Grid>
             <Divider />
             <Grid container padding={3}>
-                <StyledTable />
+                <StyledTable search={searchTerm} />
             </Grid>
         </Grid>
         </>

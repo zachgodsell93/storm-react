@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../utils/firebase';
 import { listFiles, listMetaData } from '../../utils/storageFunctions';
@@ -12,25 +12,41 @@ const columns = [
 ];
 
 
-export const StyledTable = () => {
+export const StyledTable = (search) => {
   const [user] = useAuthState(auth)
   const [fileData, setFileData] = useState([])
+  const [baseFileData, setBaseFileData] = useState([])
 
   
 
   useEffect(() => {
+    console.log(search)
     listFiles(`${user?.email}`).then((res) => {
       res.forEach((ref) => {
-        console.log(ref)
         listMetaData(ref).then((res) => {
+          console.log(res)
+          setBaseFileData(fileData => [...fileData, res])
           setFileData(fileData => [...fileData, res])
+
         }
         )
       })
-    })
+    });
+    
     
 
   }, [])
+
+  useEffect(() => {
+    console.log(search.search)
+    if(fileData.length >= 1){
+      const filteredRows = baseFileData.filter((row) => {
+        return(row.fileName.toLowerCase().includes(search.search.toLowerCase()));
+      })
+      setFileData(filteredRows)
+    }
+  }, [search])
+
   
 
   return (
@@ -41,6 +57,16 @@ export const StyledTable = () => {
         pageSize={20}
         rowsPerPageOptions={[20]}
         checkboxSelection
+        disableColumnFilter
+        disableColumnSelector
+        disableDensitySelector
+        components={{ Toolbar: GridToolbar }}
+        componentsProps={{
+          toolbar: {
+            showQuickFilter: true,
+            quickFilterProps: { debounceMs: 500 },
+          },
+        }}
       />
     </div>
   );
